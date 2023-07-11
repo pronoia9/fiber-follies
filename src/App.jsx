@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider, styled } from 'styled-components';
 
 import { Routes } from './components';
 import { dataStore } from './store/dataStore';
@@ -19,6 +19,9 @@ export default function App() {
     <ThemeProvider theme={getTheme(theme)}>
       <GlobalStyles />
       <Routes />
+
+      <div class='cursor' />
+      <div class='cursor cursor2' />
     </ThemeProvider>
   );
 }
