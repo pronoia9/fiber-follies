@@ -15,6 +15,7 @@ export const Carousel = () => {
   const speedWheel = 0.01,
     speedDrag = -0.1,
     gap = 10;
+  const navigate = useNavigate();
 
   const getZindex = (array, index) => array.map((_, i) => (index === i ? array.length : array.length - Math.abs(index - i)));
 
@@ -63,7 +64,9 @@ export const Carousel = () => {
     setProgress(index);
   };
 
-  const handleDoubleClick = (path) => {}
+  const handleDoubleClick = (path) => {
+    navigate(path);
+  }
 
   useEffect(() => {
     document.addEventListener('mousewheel', handleWheel);
