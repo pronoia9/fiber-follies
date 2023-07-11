@@ -1,4 +1,5 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 import { CarouselCard } from './CarouselCard';
@@ -63,6 +64,8 @@ export const Carousel = () => {
     setProgress(index);
   };
 
+  const handleDoubleClick = (path) => {}
+
   useEffect(() => {
     document.addEventListener('mousewheel', handleWheel);
     return () => { document.removeEventListener('mousewheel', handleWheel); };
@@ -74,12 +77,13 @@ export const Carousel = () => {
 
   return (
     <Container className='carousel'>
-      {data.map((ex, index) => (
+      {data.map(({ path, ...ex }, index) => (
         <CarouselCard
           key={`carousel-card-${index}`}
           index={index}
           {...ex}
           onClick={() => { handleClick(index + 1); }}
+          onDoubleClick={() => { handleDoubleClick(path); }}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}

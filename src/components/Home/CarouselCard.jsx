@@ -1,9 +1,6 @@
-import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 export const CarouselCard = ({ title, index, image, ...props }) => {
-  const navigate = useNavigate();
-
   return (
     <Container className='carousel-item' {...props}>
       <div className='carousel-box'>
