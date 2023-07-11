@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import { orelo, roboto } from '../assets';
+
 export const GlobalStyles = createGlobalStyle`
   /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -105,9 +107,7 @@ export const GlobalStyles = createGlobalStyle`
  * 2. Correct the odd 'em' font sizing in all browsers.
  */
 
-  code,
-  kbd,
-  samp {
+  code, kbd, samp {
     font-family: monospace, monospace; /* 1 */
     font-size: 1em; /* 2 */
   }
@@ -125,8 +125,7 @@ export const GlobalStyles = createGlobalStyle`
  * all browsers.
  */
 
-  sub,
-  sup {
+  sub, sup {
     font-size: 75%;
     line-height: 0;
     position: relative;
@@ -401,14 +400,25 @@ export const GlobalStyles = createGlobalStyle`
     border-spacing: 0;
   }
 
+  /*
+  **********************************************************************
+  **********************************************************************
+  **********************************************************************
+  */
+
+  ${'' /* @font-face { font-family: 'Roboto'; src: ${`url(${roboto})`}; } */}
+  ${'' /* @font-face { font-family: 'Orelo'; src: ${`url(${orelo})`}; } */}
+  @font-face { font-family: 'Roboto'; src: url('/src/assets/fonts/Roboto_Flex/RobotoFlex-VariableFont.ttf') }
+  @font-face { font-family: 'Orelo'; src: url('/src/assets/fonts/Orelo SemiWide Medium/Orelo SemiWide Medium.ttf') }
+
   :root {
     --c-background: ${({ theme }) => theme.background};
     --c-background2: ${({ theme }) => theme.background2};
     --c-font: ${({ theme }) => theme.font};
     --c-accent: ${({ theme }) => theme.accent};
     --c-cursor: ${({ theme }) => theme.accent};
-    --f-primary: '';
-    --f-secondary: '';
+    --f-primary: 'Roboto', serif;
+    --f-secondary: 'Orelo', serif;
     --f-tertiary: '';
     --f-code: '';
   }

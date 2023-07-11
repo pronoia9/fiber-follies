@@ -1,3 +1,6 @@
+import orelo from './fonts/Orelo SemiWide Medium/Orelo SemiWide Medium.ttf';
+import roboto from './fonts/Roboto_Flex/RobotoFlex-VariableFont.ttf';
+
 import monitors from './images/monitors.webp';
 import flyingBananas from './images/flying-bananas.webp';
 import roomWithSoftShadows from './images/room-with-soft-shadows.webp';
@@ -98,6 +101,8 @@ import learnWithJason from './images/learn-with-jason.webp';
 import volumetricSpotlight from './images/volumetric-spotlight.webp';
 
 export {
+  orelo,
+  roboto,
   monitors,
   flyingBananas,
   roomWithSoftShadows,
