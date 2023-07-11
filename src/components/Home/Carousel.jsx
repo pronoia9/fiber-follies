@@ -37,13 +37,6 @@ export const Carousel = () => {
   };
 
   const handleMouseMove = (e) => {
-    // TODO: move to app maybe? its the animated cursor
-    // if (e.type === 'mousemove') {
-    //   console.log('cursors', $cursors);
-    //   $cursors.forEach(($cursor) => {
-    //     $cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    //   });
-    // }
     if (!isDown) return;
     const x = e.clientX || (e.touches && e.touches[0].clientX) || 0;
     const mouseProgress = (x - startX) * speedDrag;
