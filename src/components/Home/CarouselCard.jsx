@@ -88,4 +88,10 @@ const Container = styled.div`
     object-fit: cover;
     pointer-events: none;
   }
+
+  @media (max-width: 500px) {
+    --x: calc(var(--active) * 800% * 0.25);
+    --y: calc(var(--active) * 200% * 4);
+    --rot: calc(var(--active) * 120deg * 1);
+  }
 `;
