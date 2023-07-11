@@ -31,7 +31,7 @@ const Container = styled.div`
   left: 50%;
   user-select: none;
   transform-origin: 0% 100%;
-  box-shadow: 0 10px 50px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 50px 10px ${({ theme }) => theme.carouselCardShadow};
   background: black;
   pointer-events: all;
   transform: translate(var(--x), var(--y)) rotate(var(--rot));

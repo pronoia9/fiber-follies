@@ -15,7 +15,7 @@ const Container = styled.a`
   right: 28px;
   width: 30px;
   height: 30px;
-  background: #fff;
+  background: var(--c-font-primary);
   border-radius: 50%;
   opacity: 0.5;
   display: flex;
@@ -23,7 +23,7 @@ const Container = styled.a`
   align-items: center;
   font-family: var(--f-secondary);
   pointer-events: all;
-  color: black;
+  color: var(--c-accent-primary);
   text-decoration: none;
   font-size: 20px;
   overflow: hidden;

@@ -31,7 +31,7 @@ const Container = styled.div`
     left: 90px;
     width: 10px;
     height: 100%;
-    border: 1px solid #fff;
+    border: 1px solid var(--c-font-primary);
     border-top: none;
     border-bottom: none;
     opacity: 0.15;
@@ -42,7 +42,7 @@ const Box = styled.div`
   position: absolute;
   bottom: 0;
   left: 30px;
-  color: #fff;
+  color: var(--c-font-primary);
   transform-origin: 0% 10%;
   transform: rotate(-90deg);
   font-size: 9px;

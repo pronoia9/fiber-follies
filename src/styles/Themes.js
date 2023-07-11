@@ -1,17 +1,23 @@
 export const themes = {
   dark: {
-    background: '#222831',
-    background2: '#393E46',
-    font: '#EEEEEE',
-    accent: '#00ADB5',
+    bgPrimary: '#000000',
+    bgSecondary: '#222831',
+    bgTertiary: '#393E46',
+    fontPrimary: '#FFFFFF',
+    accentPrimary: 'rgb(34, 0, 51)',
+    cursor: 'rgba(255, 255, 255, 0.2)',
+    // Carousel
+    carouselCardShadow: 'rgba(0, 0, 0, 0.5)',
   },
 
   light: {
-    background: '#F4EEFF',
-    background2: '#DCD6F7',
-    font: '#424874',
-    accent: '#A6B1E1',
+    bgPrimary: '#FFFFFF',
+    bgSecondary: '#F4EEFF',
+    bgTertiary: '#DCD6F7',
+    fontPrimary: '#000000',
+    accentPrimary: 'rgb(234, 200, 251)',
+    cursor: 'rgba(0, 0, 0, 0.2)',
+    // Carousel
+    carouselCardShadow: 'rgba(255, 255, 255, 0.5)',
   },
 };
-
-export const colors = [{}, {}, {}];

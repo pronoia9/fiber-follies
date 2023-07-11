@@ -412,15 +412,14 @@ export const GlobalStyles = createGlobalStyle`
   @font-face { font-family: 'Orelo'; src: url('/src/assets/fonts/Orelo SemiWide Medium/Orelo SemiWide Medium.ttf') }
 
   :root {
-    --c-background: ${({ theme }) => theme.background};
-    --c-background2: ${({ theme }) => theme.background2};
-    --c-font: ${({ theme }) => theme.font};
-    --c-accent: ${({ theme }) => theme.accent};
-    --c-cursor: ${({ theme }) => theme.accent};
+    --c-bg-primary: ${({ theme }) => theme.bgPrimary};
+    --c-bg-secondary: ${({ theme }) => theme.bgSecondary};
+    --c-bg-tertiary: ${({ theme }) => theme.bgTertiary};
+    --c-font-primary: ${({ theme }) => theme.fontPrimary};
+    --c-accent-primary: ${({ theme }) => theme.accentPrimary};
+    --c-cursor: ${({ theme }) => theme.cursor};
     --f-primary: 'Roboto', serif;
     --f-secondary: 'Orelo', serif;
-    --f-tertiary: '';
-    --f-code: '';
   }
 
   *::-webkit-scrollbar {
@@ -447,7 +446,7 @@ export const GlobalStyles = createGlobalStyle`
   #root {
     overflow: hidden;
     font-family: var(--f-primary);
-    background: linear-gradient(135deg, black, #220033);
+    background: linear-gradient(135deg, var(--c-bg-primary), var(--c-accent-primary));
 
     .cursor {
       position: fixed;
@@ -458,7 +457,7 @@ export const GlobalStyles = createGlobalStyle`
       width: var(--size);
       height: var(--size);
       border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid var(--c-cursor);
       margin: calc(var(--size) * -0.5) 0 0 calc(var(--size) * -0.5);
       transition: transform 0.85s cubic-bezier(0, 0.02, 0, 1);
       display: none;

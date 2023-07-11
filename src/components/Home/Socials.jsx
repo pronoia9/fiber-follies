@@ -36,7 +36,7 @@ const Container = styled.div`
   z-index: 10;
   bottom: 20px;
   right: 25px;
-  color: #fff;
+  color: var(--c-font-primary);
   opacity: 0.4;
 
   a {
@@ -45,7 +45,7 @@ const Container = styled.div`
   }
 
   svg {
-    --fill: #fff;
+    --fill: var(--c-font-primary);
     width: 35px;
     height: 35px;
   }
