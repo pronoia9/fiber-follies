@@ -444,9 +444,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   #root {
-    overflow: hidden;
     font-family: var(--f-primary);
     background: linear-gradient(135deg, var(--c-bg-primary), var(--c-accent-primary));
+    transition: background 0.5s ease-in-out;
 
     .cursor {
       position: fixed;
