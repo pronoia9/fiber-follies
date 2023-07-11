@@ -10,7 +10,7 @@ export const Carousel = () => {
     [startX, setStartX] = useState(0),
     [active, setActive] = useState(0),
     [isDown, setIsDown] = useState(false);
-  const speedWheel = 0.02,
+  const speedWheel = 0.01,
     speedDrag = -0.1,
     gap = 10;
 
@@ -25,7 +25,7 @@ export const Carousel = () => {
   };
 
   const animate = () => {
-    setProgress((prev) => Math.max(0, Math.min(prev, 98)));
+    setProgress((prev) => Math.max(0, Math.min(prev, 100)));
     setActive(Math.floor((progress / 100) * ($items.length - 1)));
     $items.forEach((item, index) => displayItems(item, index, active));
   };
