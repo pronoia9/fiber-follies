@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 
@@ -7,6 +7,7 @@ import { dataStore } from '../../store/dataStore';
 
 export const Carousel = () => {
   const data = dataStore((state) => state.data);
+  const refs = useRef([]);
   const [progress, setProgress] = useState(2),
     [startX, setStartX] = useState(0),
     [active, setActive] = useState(0),
@@ -17,18 +18,16 @@ export const Carousel = () => {
 
   const getZindex = (array, index) => array.map((_, i) => (index === i ? array.length : array.length - Math.abs(index - i)));
 
-  const $items = document.querySelectorAll('.carousel-item');
-
   const displayItems = (item, index, active) => {
-    const zIndex = getZindex([...$items], active)[index];
+    const zIndex = getZindex([...refs.current], active)[index];
     item.style.setProperty('--zIndex', zIndex);
-    item.style.setProperty('--active', (index - active) / $items.length * gap);
+    item.style.setProperty('--active', ((index - active) / refs.current.length) * gap);
   };
 
   const animate = () => {
     setProgress((prev) => Math.max(0, Math.min(prev, 100)));
-    setActive(Math.floor((progress / 100) * ($items.length - 1)));
-    $items.forEach((item, index) => displayItems(item, index, active));
+    setActive(Math.floor((progress / 100) * (refs.current.length - 1)));
+    refs.current.forEach((item, index) => displayItems(item, index, active));
   };
 
   const handleWheel = (e) => {
@@ -71,9 +70,7 @@ export const Carousel = () => {
     return () => { document.removeEventListener('mousewheel', handleWheel); };
   }, []);
 
-  useEffect(() => {
-    animate();
-  }, [active, progress, startX, isDown]);
+  useEffect(() => { animate(); }, [active, progress, startX, isDown]);
 
   return (
     <Container className='carousel'>
@@ -81,6 +78,7 @@ export const Carousel = () => {
         <CarouselCard
           key={`carousel-card-${index}`}
           index={index}
+          refs={refs}
           {...ex}
           onClick={() => { handleClick(index + 1); }}
           onDoubleClick={() => { handleDoubleClick(path); }}

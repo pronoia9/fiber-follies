@@ -1,8 +1,8 @@
 import { styled } from 'styled-components';
 
-export const CarouselCard = ({ title, index, image, ...props }) => {
+export const CarouselCard = ({ index, refs, title, image, ...props }) => {
   return (
-    <Container className='carousel-item' {...props}>
+    <Container ref={(ref) => (refs.current[index] = ref)} className='carousel-item' {...props}>
       <div className='carousel-box'>
         <div className='title'>{title}</div>
         <div className='num'>{`${index + 1}`.padStart(2, '0')}</div>
