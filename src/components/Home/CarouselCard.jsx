@@ -1,14 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 
-export const CarouselCard = ({ title, index, image }) => {
+export const CarouselCard = ({ title, index, image, ...props }) => {
   const navigate = useNavigate();
 
   return (
-    <Container className='carousel-item' onDoubleClick={() => {}}>
+    <Container className='carousel-item' {...props}>
       <div className='carousel-box'>
         <div className='title'>{title}</div>
-        <div className='num'>{`${index}`.padStart(2, '0')}</div>
+        <div className='num'>{`${index + 1}`.padStart(2, '0')}</div>
         <img src={image} />
       </div>
     </Container>
@@ -16,7 +16,7 @@ export const CarouselCard = ({ title, index, image }) => {
 };
 
 const Container = styled.div`
-  --items: 10;
+  --items: 98;
   --width: clamp(200px, 40vw, 400px);
   --height: clamp(150px, 30vw, 300px);
   --x: calc(var(--active) * 800%);
