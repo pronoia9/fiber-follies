@@ -33,7 +33,6 @@ export const Carousel = () => {
   const handleWheel = (e) => {
     const wheelProgress = e.deltaY * speedWheel;
     setProgress((prev) => prev + wheelProgress);
-    animate();
   };
 
   const handleMouseMove = (e) => {
@@ -49,7 +48,6 @@ export const Carousel = () => {
     const mouseProgress = (x - startX) * speedDrag;
     setProgress((prev) => prev + mouseProgress);
     setStartX(x);
-    animate();
   };
 
   const handleMouseDown = (e) => {
@@ -63,11 +61,9 @@ export const Carousel = () => {
 
   const handleClick = (index) => {
     setProgress(index);
-    animate();
   };
 
   useEffect(() => {
-    animate();
     document.addEventListener('mousewheel', handleWheel);
     return () => { document.removeEventListener('mousewheel', handleWheel); };
   }, []);
@@ -83,7 +79,7 @@ export const Carousel = () => {
           key={`carousel-card-${index}`}
           index={index}
           {...ex}
-          onClick={() => handleClick(index)}
+          onClick={() => { handleClick(index + 1); }}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
