@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 import { styled } from 'styled-components';
 
 import { CarouselCard } from './CarouselCard';
@@ -8,7 +8,7 @@ export const Carousel = () => {
   const data = dataStore((state) => state.data);
   const cardSpacing = 10;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     /*--------------------
     Vars
     --------------------*/

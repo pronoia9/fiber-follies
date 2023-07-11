@@ -1,11 +1,14 @@
+import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 export const CarouselCard = ({ title, index, image }) => {
+  const navigate = useNavigate();
+
   return (
-    <Container className='carousel-item'>
+    <Container className='carousel-item' onDoubleClick={() => {}}>
       <div className='carousel-box'>
         <div className='title'>{title}</div>
-        <div className='num'>{index}</div>
+        <div className='num'>{`${index}`.padStart(2, '0')}</div>
         <img src={image} />
       </div>
     </Container>

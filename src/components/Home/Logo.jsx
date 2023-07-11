@@ -2,8 +2,8 @@ import { styled } from "styled-components";
 
 export const Logo = () => {
   return (
-    <Container href='https://www.google.com' target='_blank' class='logo'>
-      J
+    <Container href='https://www.google.com' target='_blank' className='logo'>
+      T
     </Container>
   );
 };

@@ -20,8 +20,8 @@ export default function App() {
       <GlobalStyles />
       <Routes />
 
-      <div class='cursor' />
-      <div class='cursor cursor2' />
+      <div className='cursor' />
+      <div className='cursor cursor2' />
     </ThemeProvider>
   );
 }
