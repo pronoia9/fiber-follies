@@ -6,7 +6,7 @@ import { dataStore } from '../../store/dataStore';
 
 export const Carousel = () => {
   const data = dataStore((state) => state.data);
-  const wideCardMultiplier = 5;
+  const cardSpacing = 10;
 
   useEffect(() => {
     /*--------------------
@@ -37,7 +37,7 @@ export const Carousel = () => {
     const displayItems = (item, index, active) => {
       const zIndex = getZindex([...$items], active)[index];
       item.style.setProperty('--zIndex', zIndex);
-      item.style.setProperty('--active', ((index - active) / $items.length) * wideCardMultiplier);
+      item.style.setProperty('--active', ((index - active) / $items.length) * cardSpacing);
     };
 
     /*--------------------
