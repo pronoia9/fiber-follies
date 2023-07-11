@@ -17,7 +17,7 @@ export const Home = () => {
 
 const Container = styled.div`
   overflow: hidden;
-  font-family: 'Roboto', serif;
+  font-family: var(--f-primary);
   background: linear-gradient(135deg, black, #220033);
 `;
 

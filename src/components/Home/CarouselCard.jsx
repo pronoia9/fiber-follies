@@ -46,7 +46,7 @@ const Container = styled.div`
     height: 100%;
     transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
     opacity: var(--opacity);
-    font-family: 'Orelo-sw-db', serif;
+    font-family: var(--f-secondary);
 
     &:before {
       content: '';

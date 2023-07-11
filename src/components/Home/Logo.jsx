@@ -21,7 +21,7 @@ const Container = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Orelo-sw-db', serif;
+  font-family: var(--f-secondary);
   pointer-events: all;
   color: black;
   text-decoration: none;
