@@ -66,6 +66,7 @@ const Container = styled.div`
     color: #fff;
     bottom: 20px;
     left: 20px;
+    max-width: 90%;
     transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
     font-size: clamp(20px, 3vw, 30px);
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
