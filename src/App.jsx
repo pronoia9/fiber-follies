@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { ThemeProvider, styled } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 
 import { Routes } from './components';
 import { dataStore } from './store/dataStore';
