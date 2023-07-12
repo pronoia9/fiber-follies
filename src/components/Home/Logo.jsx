@@ -19,7 +19,7 @@ const Container = styled(Link)`
   position: absolute;
   z-index: 10;
   top: 28px;
-  right: ${({ $position }) => $position === 'right' && '28px'};
+  right: 28px;
   left: ${({ $position }) => $position === 'left' && '28px'};
   width: 30px;
   height: 30px;
