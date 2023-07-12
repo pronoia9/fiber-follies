@@ -1,11 +1,118 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import App from './App.jsx';
+import App from './App';
+import { ThreejsJourneyLv1 } from './components';
+
+const examples = [
+  { path: 'monitors', element: <></> },
+  { path: 'flying-bananas', element: <></> },
+  { path: 'room-with-soft-shadows', element: <></> },
+  { path: 'tshirt-configurator', element: <></> },
+  { path: 'caustics', element: <></> },
+  { path: 'volumetric-light-godray', element: <></> },
+  { path: 'enter-portals', element: <></> },
+  { path: 'pass-through-portals', element: <></> },
+  { path: 'magic-box', element: <></> },
+  { path: 'glass-flower', element: <></> },
+  { path: 'image-gallery', element: <></> },
+  { path: 'horizontal-tiles', element: <></> },
+  { path: 'best-served-bold-christmas-baubles', element: <></> },
+  { path: 'the-three-graces', element: <></> },
+  { path: 'frosted-glass', element: <></> },
+  { path: 'gltfjsx-400kb-drone', element: <></> },
+  { path: 'star-wars', element: <></> },
+  { path: 'bruno-simons-20k-challenge', element: <></> },
+  { path: 'scrollcontrols-and-lens-refraction', element: <></> },
+  { path: 'building-dynamic-envmaps', element: <></> },
+  { path: 'nextjs-prism', element: <></> },
+  { path: 'building-live-envmaps', element: <></> },
+  { path: 'shoe-configurator', element: <></> },
+  { path: 'audio-analyser', element: <></> },
+  { path: 'ground-reflections-and-video-textures', element: <></> },
+  { path: 'threejs-journey-lv1', element: <ThreejsJourneyLv1 /> },
+  { path: '/threejs-journey-lv1', element: <ThreejsJourneyLv1 /> },
+  { path: 'threejs-journey-portal', element: <></> },
+  { path: 'mixing-html-and-webgl-w-occlusion', element: <></> },
+  { path: 'interactive-spline-scene-live-html', element: <></> },
+  { path: 'diamond-refraction', element: <></> },
+  { path: 'diamond-ring', element: <></> },
+  { path: 'envmap-ground-projection', element: <></> },
+  { path: 'spline-glass-shapes', element: <></> },
+  { path: 'csg-bunny-usegroups', element: <></> },
+  { path: 'csg-house', element: <></> },
+  { path: 'gltf-animations-tied-to-scroll', element: <></> },
+  { path: 'object-clump', element: <></> },
+  { path: 'html-input-fields', element: <></> },
+  { path: 'useintersect-and-scrollcontrols', element: <></> },
+  { path: 'infinite-scroll', element: <></> },
+  { path: 'scrollcontrols-with-minimap', element: <></> },
+  { path: 'instanced-particles-effects', element: <></> },
+  { path: 'dbismut-furniture', element: <></> },
+  { path: 'portal-shapes', element: <></> },
+  { path: 'aquarium', element: <></> },
+  { path: 'portals', element: <></> },
+  { path: 'inter-epoxy-resin', element: <></> },
+  { path: 'stage-presets-gltfjsx', element: <></> },
+  { path: 'react-ellipsecurve', element: <></> },
+  { path: 'iridescent-decals', element: <></> },
+  { path: 'baking-soft-shadows', element: <></> },
+  { path: 'ssr-test', element: <></> },
+  { path: 'csg-operations-rapier-physics', element: <></> },
+  { path: 'faucets-select-highlight', element: <></> },
+  { path: 'rapier-physics', element: <></> },
+  { path: 'bloom-hdr-workflow-gltf', element: <></> },
+  { path: 'ground-projected-envmaps-lamina', element: <></> },
+  { path: 'basic-ballpit', element: <></> },
+  { path: 'backdrop-and-cables', element: <></> },
+  { path: 'clones', element: <></> },
+  { path: 'lamina-1x', element: <></> },
+  { path: 'react-pp-outlines', element: <></> },
+  { path: 'gatsby-stars', element: <></> },
+  { path: 'pmndrs-vercel', element: <></> },
+  { path: 'sport-hall', element: <></> },
+  { path: 'night-train', element: <></> },
+  { path: 'bouncy-watch', element: <></> },
+  { path: 'transparent-aesop-bottles', element: <></> },
+  { path: 'raycast-cycling', element: <></> },
+  { path: 'landing-page', element: <></> },
+  { path: 'scrollcontrols-gltf', element: <></> },
+  { path: 'merged-instance', element: <></> },
+  { path: 'gpgpu-curl-noise-dof', element: <></> },
+  { path: 'hi-key-bubbles', element: <></> },
+  { path: 'floating-instanced-shoes', element: <></> },
+  { path: 'simple-audio-analyser', element: <></> },
+  { path: 'camera-scroll', element: <></> },
+  { path: 'springy-boxes', element: <></> },
+  { path: 'floating-diamonds', element: <></> },
+  { path: 'gltf-animations', element: <></> },
+  { path: 'sparks-and-effects', element: <></> },
+  { path: 'camera-shake', element: <></> },
+  { path: 'ragdoll-physics', element: <></> },
+  { path: 'react-spring-animations', element: <></> },
+  { path: 'mount-transitions', element: <></> },
+  { path: 'floating-laptop', element: <></> },
+  { path: 'zustand-site', element: <></> },
+  { path: 'cell-fracture', element: <></> },
+  { path: 'router-transitions', element: <></> },
+  { path: 'soft-shadows', element: <></> },
+  { path: 'lulaby-city', element: <></> },
+  { path: 'viking-ship', element: <></> },
+  { path: 'wobbling-sphere', element: <></> },
+  { path: 'moksha', element: <></> },
+  { path: 'flexbox-yoga-in-webgl', element: <></> },
+  { path: 'confetti', element: <></> },
+  { path: 'learn-with-jason', element: <></> },
+  { path: 'volumetric-spotlight', element: <></> },
+];
+
+const router = createBrowserRouter([
+  { path: '/', element: <App />, children: examples, },
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <>
+    <RouterProvider router={router} />
+  </>
 );
