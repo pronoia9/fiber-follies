@@ -1,7 +1,7 @@
 import { Cactus } from './Cactus';
 import { Camera } from './Camera';
 import { Icon } from './Icon';
-import { levaProps } from './leva';
+import { levaProps } from './Leva';
 import { Level } from './Level';
 import { Pyramid } from './Pyramid';
 import { Sudo } from './Sudo';
