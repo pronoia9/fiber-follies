@@ -1,18 +1,44 @@
+import { PresentationControls } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
 import { styled } from 'styled-components';
+import { useControls } from 'leva';
+
+import { Cactus, Camera, Icon, levaProps, Level, Pyramid, Sudo } from '.';
 
 export const ThreejsJourneyLv1 = () => {
-  return <Container>ThreejsJourneyLv1</Container>;
+  const canvasOptions = useControls('Canvas', levaProps.canvas);
+  const cameraOptions = useControls('Camera', levaProps.camera);
+  const presentationControlsOptions = useControls('Presentation Controls', levaProps.presentationControls);
+
+  return (
+    <Container>
+      <Canvas {...canvasOptions} camera={cameraOptions}>
+        <color attach='background' args={[canvasOptions.color]} />
+        <ambientLight />
+        <PresentationControls {...presentationControlsOptions}>
+          <group>
+            <Level />
+            <Sudo />
+            <Camera />
+            <Cactus />
+            <Icon />
+            <Pyramid />
+          </group>
+        </PresentationControls>
+      </Canvas>
+    </Container>
+  );
 };
 
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
   filter: saturate(1.15) hue-rotate(345deg);
 
+  &,
   * {
+    width: 100%;
+    min-height: 100vw;
+    height: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
