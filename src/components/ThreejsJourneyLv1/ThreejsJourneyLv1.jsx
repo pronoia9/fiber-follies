@@ -19,7 +19,7 @@ export const ThreejsJourneyLv1 = () => {
         <color attach='background' args={[canvasOptions.color]} />
         <ambientLight />
         <PresentationControls {...presentationControlsOptions}>
-          <group>
+          <group position-y={-0.75} dispose={null}>
             <Level model={model} />
             <Sudo model={model} />
             <Camera model={model} />
