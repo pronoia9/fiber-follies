@@ -2,7 +2,6 @@ export const levaProps = {
   canvas: {
     flat: { value: true },
     dpr: { value: [1, 2] },
-    color: { value: '#e0b7ff' },
   },
 
   camera: {
