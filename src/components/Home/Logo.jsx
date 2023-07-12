@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { css, styled } from 'styled-components';
 
-export const Logo = ({ position = 'right' }) => {
+export const Logo = ({ position }) => {
   return (
-    <Container to='/' className='logo' $position={position}>
+    <Container to='/' className='logo' $position={position || 'right'}>
       <svg width='931' height='925' viewBox='0 0 931 925' fill='none' xmlns='http://www.w3.org/2000/svg'>
         <rect y='325' width='277' height='275' />
         <rect x='327' y='325' width='277' height='275' />
@@ -19,8 +19,8 @@ const Container = styled(Link)`
   position: absolute;
   z-index: 10;
   top: 28px;
-  right: 28px;
-  left: ${({ $position }) => $position === 'left' && '28px'};
+  ${({ $position }) => $position === 'right' && css`right: 28px; `}
+  ${({ $position }) => $position === 'left' && css`left: 28px; `}
   width: 30px;
   height: 30px;
   background: var(--c-font-primary);
