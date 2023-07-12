@@ -61,11 +61,25 @@ export const Carousel = () => {
     navigate(path);
   }
 
+  const handleKeyDown = ({ code }) => {
+    const direction = (code === 'ArrowRight' || code === 'ArrowDown') ? 1 : (code === 'ArrowLeft' || code === 'ArrowUp') ? -1 : 0;
+    setProgress((prev) => prev + direction);
+  }
+
+  // Event listener for mouse wheel
   useEffect(() => {
     document.addEventListener('mousewheel', handleWheel);
     return () => { document.removeEventListener('mousewheel', handleWheel); };
   }, []);
 
+  // Event listener for arrow key press
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown);
+    return () => { document.removeEventListener('keydown', handleKeyDown); };
+  }, []);
+
+  useEffect(() => { setProgress((prev) => Math.max(0, Math.min(prev, 100))); }, [progress]);
+  
   useEffect(() => { animate(); }, [active, progress, startX, isDown]);
 
   return (
