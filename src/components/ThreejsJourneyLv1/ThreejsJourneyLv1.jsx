@@ -5,11 +5,14 @@ import { useControls } from 'leva';
 
 import { Cactus, Camera, Icon, levaProps, Level, Pyramid, Sudo } from '.';
 import { threejsJourneyLv1 as room } from '../../assets/3d';
+import { dataStore } from '../../store/dataStore.js';
+import { themes } from '../../styles/Themes';
 useGLTF.preload(room);
 
 export const ThreejsJourneyLv1 = () => {
+  const theme = dataStore((state) => state.theme);
   const model = useGLTF(room);
-  const canvasOptions = useControls('Canvas', levaProps.canvas);
+  const canvasOptions = useControls('Canvas', { ...levaProps.canvas, color: { value: themes[theme].accentPrimary } });
   const cameraOptions = useControls('Camera', levaProps.camera);
   const presentationControlsOptions = useControls('Presentation Controls', levaProps.presentationControls);
 
