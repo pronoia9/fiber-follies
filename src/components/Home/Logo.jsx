@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 export const Logo = () => {
   return (
-    <Container href='https://docs.pmnd.rs/react-three-fiber/getting-started/examples' target='_blank' className='logo'>
+    <Container to='/' className='logo'>
       <svg width='931' height='925' viewBox='0 0 931 925' fill='none' xmlns='http://www.w3.org/2000/svg'>
         <rect y='325' width='277' height='275' />
         <rect x='327' y='325' width='277' height='275' />
@@ -14,9 +15,9 @@ export const Logo = () => {
   );
 };
 
-const Container = styled.a`
+const Container = styled(Link)`
   position: absolute;
-  z-index: 2;
+  z-index: 99999999999;
   top: 28px;
   right: 28px;
   width: 30px;
