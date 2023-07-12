@@ -1,3 +1,5 @@
-export const Camera = () => {
+export const Camera = ({ model }) => {
+  const { nodes } = model;
+  
   return <></>;
 };
