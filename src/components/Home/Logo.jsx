@@ -1,9 +1,15 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components';
 
 export const Logo = () => {
   return (
-    <Container href='https://www.google.com' target='_blank' className='logo'>
-      T
+    <Container href='https://docs.pmnd.rs/react-three-fiber/getting-started/examples' target='_blank' className='logo'>
+      <svg width='931' height='925' viewBox='0 0 931 925' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <rect y='325' width='277' height='275' />
+        <rect x='327' y='325' width='277' height='275' />
+        <rect x='654' width='277' height='600' />
+        <rect x='326' width='579' height='275' />
+        <rect x='327' y='650' width='277' height='275' />
+      </svg>
     </Container>
   );
 };
@@ -21,11 +27,16 @@ const Container = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: var(--f-secondary);
   pointer-events: all;
-  color: var(--c-accent-primary);
-  text-decoration: none;
-  font-size: 20px;
   overflow: hidden;
-  padding-bottom: 0.1em;
+  padding: 0.1em;
+
+  svg {
+    width: 20px;
+    height: 20px;
+
+    rect {
+      fill: var(--c-accent-primary);
+    }
+  }
 `;
