@@ -8,7 +8,7 @@ import { dataStore } from '../../store/dataStore';
 export const Carousel = () => {
   const data = dataStore((state) => state.data);
   const refs = useRef([]);
-  const [progress, setProgress] = useState(2),
+  const [progress, setProgress] = useState(26),
     [startX, setStartX] = useState(0),
     [active, setActive] = useState(0),
     [isDown, setIsDown] = useState(false);
