@@ -13,4 +13,5 @@ export default defineConfig({
     exclude: [''],
     include: [''],
   },
+  assetsInclude: ['**.glb']
 });
