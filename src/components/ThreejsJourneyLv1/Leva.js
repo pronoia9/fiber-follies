@@ -7,7 +7,7 @@ export const levaProps = {
 
   camera: {
     fov: { value: 25 },
-    position: { value: [0, 0, 0] },
+    position: { value: [0, 0, 8] },
   },
 
   presentationControls: {
