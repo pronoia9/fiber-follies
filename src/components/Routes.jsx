@@ -1,10 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
-import { Home } from './Home';
+import { Home, ThreejsJourneyLv1 } from '.';
 
 export default function AllRoutes() {
   return (
     <Routes>
-      <Route path='/' element={<Home />} />
+      <Route path='/threejs-journey-lv1' element={<ThreejsJourneyLv1 />} />
+      <Route exact path='/' element={<Home />} />
     </Routes>
   );
 }
