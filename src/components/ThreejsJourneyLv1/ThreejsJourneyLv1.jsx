@@ -7,7 +7,6 @@ import { Cactus, Camera, Icon, levaProps, Level, Pyramid, Sudo } from '.';
 import { threejsJourneyLv1 as room } from '../../assets/3d';
 import { dataStore } from '../../store/dataStore.js';
 import { themes } from '../../styles/Themes';
-useGLTF.preload(room);
 
 export const ThreejsJourneyLv1 = () => {
   const theme = dataStore((state) => state.theme);
@@ -35,6 +34,8 @@ export const ThreejsJourneyLv1 = () => {
     </Container>
   );
 };
+
+useGLTF.preload(room);
 
 const Container = styled.div`
   filter: saturate(1.15) hue-rotate(345deg);
