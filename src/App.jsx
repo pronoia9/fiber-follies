@@ -29,7 +29,7 @@ export default function App() {
   return (
     <ThemeProvider theme={getTheme(theme)}>
       <GlobalStyles />
-      <Logo />
+      <Logo position={location.pathname !== '/' && 'left'} />
       {location.pathname === '/' && (
         <>
           <Carousel />
