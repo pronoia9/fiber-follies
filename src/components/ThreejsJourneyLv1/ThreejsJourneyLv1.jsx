@@ -1,11 +1,14 @@
-import { PresentationControls } from '@react-three/drei';
+import { PresentationControls, useGLTF } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { styled } from 'styled-components';
 import { useControls } from 'leva';
 
 import { Cactus, Camera, Icon, levaProps, Level, Pyramid, Sudo } from '.';
+import { threejsJourneyLv1 as room } from '../../assets/3d';
+useGLTF.preload(room);
 
 export const ThreejsJourneyLv1 = () => {
+  const model = useGLTF(room);
   const canvasOptions = useControls('Canvas', levaProps.canvas);
   const cameraOptions = useControls('Camera', levaProps.camera);
   const presentationControlsOptions = useControls('Presentation Controls', levaProps.presentationControls);
@@ -17,12 +20,12 @@ export const ThreejsJourneyLv1 = () => {
         <ambientLight />
         <PresentationControls {...presentationControlsOptions}>
           <group>
-            <Level />
-            <Sudo />
-            <Camera />
-            <Cactus />
-            <Icon />
-            <Pyramid />
+            <Level model={model} />
+            <Sudo model={model} />
+            <Camera model={model} />
+            <Cactus model={model} />
+            <Icon model={model} />
+            <Pyramid model={model} />
           </group>
         </PresentationControls>
       </Canvas>
