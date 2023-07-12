@@ -45,6 +45,7 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    touch-action: none;
   }
 
   @keyframes fade-in {
@@ -58,7 +59,6 @@ const Container = styled.div`
 
   canvas {
     opacity: 0;
-    touch-action: none;
     animation: fade-in 1s ease 0.3s forwards;
   }
 
