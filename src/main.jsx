@@ -32,7 +32,6 @@ const examples = [
   { path: 'audio-analyser', element: <></> },
   { path: 'ground-reflections-and-video-textures', element: <></> },
   { path: 'threejs-journey-lv1', element: <ThreejsJourneyLv1 /> },
-  { path: '/threejs-journey-lv1', element: <ThreejsJourneyLv1 /> },
   { path: 'threejs-journey-portal', element: <></> },
   { path: 'mixing-html-and-webgl-w-occlusion', element: <></> },
   { path: 'interactive-spline-scene-live-html', element: <></> },
