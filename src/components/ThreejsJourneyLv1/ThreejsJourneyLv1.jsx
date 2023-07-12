@@ -1,7 +1,7 @@
 import { PresentationControls, useGLTF } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { styled } from 'styled-components';
-import { useControls } from 'leva';
+import { Leva, useControls } from 'leva';
 
 import { Cactus, Camera, Icon, levaProps, Level, Pyramid, Sudo } from '.';
 import { threejsJourneyLv1 as room } from '../../assets/3d';
@@ -17,6 +17,7 @@ export const ThreejsJourneyLv1 = () => {
 
   return (
     <Container>
+      <Leva collapsed={true} />
       <Canvas {...canvasOptions} camera={cameraOptions}>
         <color attach='background' args={[canvasOptions.color]} />
         <ambientLight />
@@ -40,8 +41,7 @@ useGLTF.preload(room);
 const Container = styled.div`
   filter: saturate(1.15) hue-rotate(345deg);
 
-  &,
-  * {
+  &, canvas {
     width: 100%;
     min-height: 100vw;
     height: 100%;
@@ -49,6 +49,9 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  &, * {
     touch-action: none;
   }
 
