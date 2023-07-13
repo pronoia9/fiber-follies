@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 
 import {
+  // Showcase
   monitors,
   flyingBananas,
   roomWithSoftShadows,
@@ -99,6 +100,15 @@ import {
   confetti,
   learnWithJason,
   volumetricSpotlight,
+  // Game Prototypes
+  racingGame,
+  pinballIn70Lines,
+  spaceGame,
+  minecraft,
+  arkanoid,
+  pingPong,
+  arkanoidUnder60Loc,
+  // Basic Examples
 } from '../assets';
 import { getSystemTheme } from '../utils/utils';
 
@@ -109,6 +119,7 @@ export const dataStore = create((set) => ({
 
   tab: 'showcase',
   setTab: (tab) => set({ tab }),
+
   data: {
     showcase: [
       { title: 'Monitors', path: 'monitors', image: monitors },
@@ -210,7 +221,15 @@ export const dataStore = create((set) => ({
       { title: 'Learn With Jason', path: 'learn-with-jason', image: learnWithJason },
       { title: 'Volumetric Spotlight', path: 'volumetric-spotlight', image: volumetricSpotlight },
     ],
-    'game prototypes': [],
+    'game prototypes': [
+      { title: 'Racing Game', path: 'racing-game', image: racingGame },
+      { title: 'Pinball In 70 Lines', path: 'pinball-in-70-lines', image: pinballIn70Lines },
+      { title: 'Space Game', path: 'space-game', image: spaceGame },
+      { title: 'Minecraft', path: 'Arkanoid', image: minecraft },
+      { title: 'Arkanoid', path: 'Ping-Pong', image: arkanoid },
+      { title: 'Ping-Pong', path: 'ping-pong', image: pingPong },
+      { title: 'Arkanoid Under 60 LOC', path: 'arkanoid-under-60-loc', image: arkanoidUnder60Loc },
+    ],
     'basic examples': [],
   },
 }));

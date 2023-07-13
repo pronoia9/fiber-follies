@@ -1,6 +1,8 @@
 import orelo from './fonts/Orelo SemiWide Medium/Orelo SemiWide Medium.ttf';
 import roboto from './fonts/Roboto_Flex/RobotoFlex-VariableFont.ttf';
 
+// IMAGES
+// Showcase
 import monitors from './images/monitors.webp';
 import flyingBananas from './images/flying-bananas.webp';
 import roomWithSoftShadows from './images/room-with-soft-shadows.webp';
@@ -99,10 +101,20 @@ import flexboxYogaInWebgl from './images/flexbox-yoga-in-webgl.webp';
 import confetti from './images/confetti.webp';
 import learnWithJason from './images/learn-with-jason.webp';
 import volumetricSpotlight from './images/volumetric-spotlight.webp';
+// Game Prototypes
+import racingGame from './images/racing-game.webp';
+import pinballIn70Lines from './images/pinball-in-70-lines.webp';
+import spaceGame from './images/space-game.webp';
+import minecraft from './images/minecraft.webp';
+import arkanoid from './images/arkanoid.webp';
+import pingPong from './images/ping-pong.webp';
+import arkanoidUnder60Loc from './images/arkanoid-under-60-loc.webp';
+// Basic Examples
 
 export {
   orelo,
   roboto,
+  // Showcase
   monitors,
   flyingBananas,
   roomWithSoftShadows,
@@ -201,4 +213,13 @@ export {
   confetti,
   learnWithJason,
   volumetricSpotlight,
+  // Game Prototypes
+  racingGame,
+  pinballIn70Lines,
+  spaceGame,
+  minecraft,
+  arkanoid,
+  pingPong,
+  arkanoidUnder60Loc,
+  // Basic Examples
 };
