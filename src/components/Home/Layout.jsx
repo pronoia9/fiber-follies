@@ -58,7 +58,6 @@ const Line = styled.p`
   line-height: 1.4;
   text-transform: uppercase;
   opacity: ${({ $active }) => ($active ? 0.65 : 0.4)};
-  opacity: ${({ $active }) => $active && 0.6};
   cursor: pointer;
   transition: all 0.25s ease-in-out;
 `;
