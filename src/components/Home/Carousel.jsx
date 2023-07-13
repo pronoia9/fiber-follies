@@ -8,7 +8,7 @@ import { dataStore } from '../../store/dataStore';
 export const Carousel = () => {
   const { data, tab } = dataStore((state) => ({ data: state.data, tab: state.tab }));
   const refs = useRef([]);
-  const [progress, setProgress] = useState(26),
+  const [progress, setProgress] = useState(0),
     [startX, setStartX] = useState(0),
     [active, setActive] = useState(0),
     [isDown, setIsDown] = useState(false);
@@ -17,8 +17,10 @@ export const Carousel = () => {
     gap = 10;
   const navigate = useNavigate();
 
+  const getZindex = (index) => refs.current.map((_, i) => (index === i ? refs.current.length : refs.current.length - Math.abs(index - i)));
+
   const displayItems = (item, index, active) => {
-    const zIndex = refs.current?.map((_, i) => (index === i ? refs.current.length : refs.current.length - Math.abs(index - i)));
+    const zIndex = getZindex(active)[index];
     item?.style.setProperty('--zIndex', zIndex);
     item?.style.setProperty('--active', ((index - active) / refs.current.length) * gap);
   };
