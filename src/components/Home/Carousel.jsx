@@ -17,10 +17,8 @@ export const Carousel = () => {
     gap = 10;
   const navigate = useNavigate();
 
-  const getZindex = (index) => refs.current.map((_, i) => (index === i ? refs.current.length : refs.current.length - Math.abs(index - i)));
-
   const displayItems = (item, index, active) => {
-    const zIndex = getZindex(active)[index];
+    const zIndex = refs.current?.map((_, i) => (index === i ? refs.current.length : refs.current.length - Math.abs(index - i)));
     item?.style.setProperty('--zIndex', zIndex);
     item?.style.setProperty('--active', ((index - active) / refs.current.length) * gap);
   };
