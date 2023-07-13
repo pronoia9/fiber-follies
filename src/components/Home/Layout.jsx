@@ -54,13 +54,11 @@ const Box = styled.div`
 
 const Line = styled.p`
   color: var(--c-font-primary);
-  /* font-size: ${({ $active }) => `${$active ? 0.75 : 0.6}rem`}; */
-  font-size: 0.6rem;
+  font-size: ${({ $active }) => `${$active ? 0.75 : 0.6}rem`};
   line-height: 1.4;
   text-transform: uppercase;
-  /* opacity: ${({ $active }) => ($active ? 0.65 : 0.4)}; */
-  opacity: 0.4;
-  opacity: ${({ $active }) => ($active && 0.6)};
+  opacity: ${({ $active }) => ($active ? 0.65 : 0.4)};
+  opacity: ${({ $active }) => $active && 0.6};
   cursor: pointer;
-  transition: all 0.5 ease-in-out;
+  transition: all 0.25s ease-in-out;
 `;
