@@ -110,6 +110,49 @@ import arkanoid from './images/arkanoid.webp';
 import pingPong from './images/ping-pong.webp';
 import arkanoidUnder60Loc from './images/arkanoid-under-60-loc.webp';
 // Basic Examples
+import basicDemo from './images/basic-demo.webp'
+import dreiRenderTexture from './images/drei-render-texture.webp'
+import bvh from './images/bvh.webp'
+import environmentBlurAndTransitions from './images/environment-blur-and-transitions.webp'
+import pairingThreejsToUI from './images/pairing-threejs-to-ui.webp'
+import invertedStencilBuffer from './images/inverted-stencil-buffer.webp'
+import stencilMask from './images/stencil-mask.webp'
+import transformControlsAndMakeDefault from './images/transformcontrols-and-make-default.webp'
+import boundsandMakeDefault from './images/bounds-and-make-default.webp'
+import instancedVertexColors from './images/instanced-vertex-colors.webp'
+import progressiveLoadingStatesWithSuspense from './images/progressive-loading-states-with-suspense.webp'
+import viewTracking from './images/view-tracking.webp'
+import multipleViewsWithUniformControls from './images/multiple-views-with-uniform-controls.webp'
+import canvasAndText from './images/canvas-and-text.webp'
+import gltfAnimationsReused from './images/gltf-animations-reused.webp'
+import reusingGltfs from './images/reusing-gltfs.webp'
+import svgRenderer from './images/svg-renderer.webp'
+import mixingHtmlandWebgl from './images/mixing-html-and-webgl.webp'
+import viewcube from './images/viewcube.webp'
+import mixingControls from './images/mixing-controls.webp'
+import videoTextures from './images/video-textures.webp'
+import skyDomeWithAnnotations from './images/sky-dome-with-annotations.webp'
+import tyingCanvasToScrollOffset from './images/tying-canvas-to-scroll-offset.webp'
+import edgesGeometry from './images/edges-geometry.webp'
+import htmlAnnotations from './images/html-annotations.webp'
+import shaderMaterials from './images/shader-materials.webp'
+import simplePhysicsDemo from './images/simple-physics-demo.webp'
+import triggerMeshes from './images/trigger-meshes.webp'
+import simplePhysicsDemoWithDebugBounds from './images/simple-physics-demo-with-debug-bounds.webp'
+import selectiveOutlines from './images/selective-outlines.webp'
+import instances from './images/instances.webp'
+import physicsWithConvexPolyhedrons from './images/physics-with-convex-polyhedrons.webp'
+import colorGrading from './images/color-grading.webp'
+import grassShader from './images/grass-shader.webp'
+import clouds from './images/clouds.webp'
+import svgMapsWithHtmlAnnotations from './images/svg-maps-with-html-annotations.webp'
+import reusingGeometryAndLevelOfDetail from './images/reusing-geometry-and-level-of-detail.webp'
+import htmlMarkers from './images/html-markers.webp'
+import bezierCurvesAndNodes from './images/bezier-curves-and-nodes.webp'
+import shaderFire from './images/shader-fire.webp'
+import waterShader from './images/water-shader.webp'
+import stagingAndCameraShake from './images/staging-and-camerashake.webp'
+import shaderHmr from './images/shader-hmrshader-hmr.webp'
 
 export {
   orelo,
@@ -222,4 +265,47 @@ export {
   pingPong,
   arkanoidUnder60Loc,
   // Basic Examples
+  basicDemo,
+  dreiRenderTexture,
+  bvh,
+  environmentBlurAndTransitions,
+  pairingThreejsToUI,
+  invertedStencilBuffer,
+  stencilMask,
+  transformControlsAndMakeDefault,
+  boundsandMakeDefault,
+  instancedVertexColors,
+  progressiveLoadingStatesWithSuspense,
+  viewTracking,
+  multipleViewsWithUniformControls,
+  canvasAndText,
+  gltfAnimationsReused,
+  reusingGltfs,
+  svgRenderer,
+  mixingHtmlandWebgl,
+  viewcube,
+  mixingControls,
+  videoTextures,
+  skyDomeWithAnnotations,
+  tyingCanvasToScrollOffset,
+  edgesGeometry,
+  htmlAnnotations,
+  shaderMaterials,
+  simplePhysicsDemo,
+  triggerMeshes,
+  simplePhysicsDemoWithDebugBounds,
+  selectiveOutlines,
+  instances,
+  physicsWithConvexPolyhedrons,
+  colorGrading,
+  grassShader,
+  clouds,
+  svgMapsWithHtmlAnnotations,
+  reusingGeometryAndLevelOfDetail,
+  htmlMarkers,
+  bezierCurvesAndNodes,
+  shaderFire,
+  waterShader,
+  stagingAndCameraShake,
+  shaderHmr,
 };
