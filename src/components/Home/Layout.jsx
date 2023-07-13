@@ -1,14 +1,21 @@
 import { styled } from 'styled-components';
+import { dataStore } from '../../store/dataStore';
 
 export const Layout = () => {
+  const { tabs, tab, setTab } = dataStore((state) => ({ tabs: Object.keys(state.data), tab: state.tab, setTab: state.setTab }));
+
+  const handleClick = (e) => {
+    setTab(`${e.target.innerText}`.toLowerCase());
+  };
+
   return (
     <Container className='layout'>
       <Box className='box'>
-        High-end, full-service
-        <br />
-        visual content creation
-        <br />
-        for lifestyle branding.
+        {tabs.map((t, index) => (
+          <Line key={`data-tabs-${index}-${t}`} $active={t === tab} onClick={handleClick}>
+            {t}
+          </Line>
+        ))}
       </Box>
     </Container>
   );
@@ -21,7 +28,6 @@ const Container = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
 
   &:before {
     content: '';
@@ -42,11 +48,19 @@ const Box = styled.div`
   position: absolute;
   bottom: 0;
   left: 30px;
-  color: var(--c-font-primary);
   transform-origin: 0% 10%;
   transform: rotate(-90deg);
-  font-size: 9px;
+`;
+
+const Line = styled.p`
+  color: var(--c-font-primary);
+  /* font-size: ${({ $active }) => `${$active ? 0.75 : 0.6}rem`}; */
+  font-size: 0.6rem;
   line-height: 1.4;
   text-transform: uppercase;
+  /* opacity: ${({ $active }) => ($active ? 0.65 : 0.4)}; */
   opacity: 0.4;
+  opacity: ${({ $active }) => ($active && 0.6)};
+  cursor: pointer;
+  transition: all 0.5 ease-in-out;
 `;
