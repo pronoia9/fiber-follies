@@ -3,7 +3,6 @@ import { styled } from 'styled-components';
 
 import { Overlay, Scene } from './';
 import { dataStore } from '../../store/dataStore';
-import { Leva } from 'leva';
 
 export const Monitors = () => {
   const { setLogoPosition } = dataStore((state) => ({ setLogoPosition: state.setLogoPosition }));
@@ -11,7 +10,6 @@ export const Monitors = () => {
 
   return (
     <Container>
-      <Leva collapsed={false} />
       <Overlay />
       <Scene />
     </Container>
