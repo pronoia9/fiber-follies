@@ -6,7 +6,7 @@ import { useGLTF } from '@react-three/drei';
 // Renders flashing LED's
 export const Leds = ({ instances }) => {
   const ref = useRef();
-  const { nodes } = useGLTF('/src/components/Monitors/assets/computers_1-transformed.glb');
+  const { nodes } = useGLTF('/src/components/Monitors/computers_1-transformed.glb');
 
   useMemo(() => {
     nodes.Sphere.material = new MeshBasicMaterial();
