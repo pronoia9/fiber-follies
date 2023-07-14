@@ -1,8 +1,7 @@
-import * as THREE from 'three';
-import { useMemo, useContext, createContext, useRef } from 'react';
+import { MeshBasicMaterial } from 'three';
+import { useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { useGLTF, Merged, RenderTexture, PerspectiveCamera, Text } from '@react-three/drei';
-import { Screen, ScreenInteractive, ScreenText, SpinningBox } from '.';
+import { useGLTF } from '@react-three/drei';
 
 // Renders flashing LED's
 export const Leds = ({ instances }) => {
@@ -10,7 +9,7 @@ export const Leds = ({ instances }) => {
   const { nodes } = useGLTF('/src/components/Monitors/assets/computers_1-transformed.glb');
 
   useMemo(() => {
-    nodes.Sphere.material = new THREE.MeshBasicMaterial();
+    nodes.Sphere.material = new MeshBasicMaterial();
     nodes.Sphere.material.toneMapped = false;
   }, []);
 
