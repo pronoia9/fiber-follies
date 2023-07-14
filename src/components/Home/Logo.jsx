@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom';
 import { css, styled } from 'styled-components';
 
-export const Logo = ({ position }) => {
+import { dataStore } from '../../store/dataStore';
+
+export const Logo = () => {
+  const { logoPosition } = dataStore((state) => ({ logoPosition: state.logoPosition, }));
+  
   return (
-    <Container to='/' className='logo' $position={position || 'right'}>
+    <Container to='/' className='logo' $position={logoPosition}>
       <svg width='931' height='925' viewBox='0 0 931 925' fill='none' xmlns='http://www.w3.org/2000/svg'>
         <rect y='325' width='277' height='275' />
         <rect x='327' y='325' width='277' height='275' />
@@ -16,11 +20,13 @@ export const Logo = ({ position }) => {
 };
 
 const Container = styled(Link)`
+  display: ${({ $position }) => !$position && 'none'};
   position: absolute;
   z-index: 10;
-  top: 28px;
-  ${({ $position }) => $position === 'right' && css`right: 28px; `}
-  ${({ $position }) => $position === 'left' && css`left: 28px; `}
+  ${({ $position }) => $position.includes('top') && css`top: 28px; `}
+  ${({ $position }) => $position.includes('bottom') && css`bottom: 28px; `}
+  ${({ $position }) => $position.includes('right') && css`right: 28px; `}
+  ${({ $position }) => $position.includes('left') && css`left: 28px; `}
   width: 30px;
   height: 30px;
   background: var(--c-font-primary);
