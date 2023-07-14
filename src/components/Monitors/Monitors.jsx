@@ -1,12 +1,15 @@
-import { Logo } from '@pmndrs/branding';
-
-import { Overlay, Scene } from './';
+import { useEffect } from 'react';
 import { styled } from 'styled-components';
 
+import { Overlay, Scene } from './';
+import { dataStore } from '../../store/dataStore';
+
 export const Monitors = () => {
+  const { setLogoPosition } = dataStore((state) => ({ setLogoPosition: state.setLogoPosition }));
+  useEffect(() => setLogoPosition('bottom left'), []);
+
   return (
     <Container>
-      <Logo style={{ position: 'absolute', bottom: 40, left: 40, width: 30 }} />
       <Overlay />
       <Scene />
     </Container>
