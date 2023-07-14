@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+import 'normalize.css/normalize.css';
 import App from './App';
 import { Monitors, ThreejsJourneyLv1 } from './components';
 
