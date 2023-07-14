@@ -1,4 +1,9 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, keyframes } from 'styled-components';
+
+export const fadein = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
 
 export const GlobalStyles = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -106,6 +111,6 @@ export const GlobalStyles = createGlobalStyle`
     height: 100%;
     min-height: 100vh;
     opacity: 0;
-    animation: fade-in 1s ease 0.3s forwards;
+    animation: ${fadein} 1s ease 0.3s forwards;
   }
 `;
