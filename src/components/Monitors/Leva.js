@@ -2,6 +2,7 @@ export const levaProps = {
   canvas: {
     shadows: { value: true },
     dpr: { value: [1, 2] },
+    color: { value: 'black' },
   },
 
   camera: {

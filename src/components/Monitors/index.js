@@ -1,6 +1,11 @@
 import { Computers } from './Computers';
+import { ComputersInstances } from './ComputersInstances';
+import { ComputersLeds } from './ComputersLeds';
+import { ComputersScreen } from './ComputersScreen';
+import { ComputersScreenInteractive } from './ComputersScreenInteractive';
+import { ComputersScreenText } from './ComputersScreenText';
 import { Effects } from './Effects';
-import { Instances } from './Instances';
+import { Floor } from './Floor';
 import { levaProps } from './Leva';
 import { Lights } from './Lights';
 import { Monitors } from './Monitors';
@@ -8,4 +13,19 @@ import { Overlay } from './Overlay';
 import { Scene } from './Scene';
 import { SpinningBox } from './SpinningBox';
 
-export { Computers, Effects, Instances, levaProps, Lights, Monitors, Overlay, Scene, SpinningBox };
+export {
+  Computers,
+  ComputersInstances,
+  ComputersLeds,
+  ComputersScreen,
+  ComputersScreenInteractive,
+  ComputersScreenText,
+  Effects,
+  Floor,
+  levaProps,
+  Lights,
+  Monitors,
+  Overlay,
+  Scene,
+  SpinningBox,
+};
