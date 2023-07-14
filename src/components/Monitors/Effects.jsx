@@ -1,15 +1,10 @@
 import { EffectComposer, Bloom, DepthOfField } from '@react-three/postprocessing';
-import { useControls, folder } from 'leva';
-
-import { levaProps } from './Leva';
 
 export const Effects = () => {
-  const effects = useControls('Effects', ...levaProps.effects);
-
   return (
     <EffectComposer disableNormalPass>
-      <Bloom {...effects.Bloom} />
-      <DepthOfField {...effects['Depth Of Field']} />
+      <Bloom luminanceThreshold={0} mipmapBlur luminanceSmoothing={0.0} intensity={6} />
+      <DepthOfField target={[0, 0, 13]} focalLength={0.3} bokehScale={15} height={700} />
     </EffectComposer>
   );
 };

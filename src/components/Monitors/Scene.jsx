@@ -1,28 +1,29 @@
 import { Canvas } from '@react-three/fiber';
 import { BakeShadows } from '@react-three/drei';
-import { useControls } from 'leva';
 
-import { levaProps, Lights, Instances, Computers, Bunny, Floor, CameraRig, Effects } from './';
+import { Lights, Instances, Computers, Bunny, Floor, CameraRig, Effects } from './';
 
 export const Scene = () => {
-  const canvasProps = useControls('Canvas', ...levaProps.canvas),
-    cameraProps = useControls('Camera', ...levaProps.camera),
-    sceneProps = useControls('Scene', ...levaProps.scene),
-    computersProps = useControls('Computers', ...levaProps.computers),
-    floorProps = useControls('Floor', ...levaProps.floor),
-    bunnyProps = useControls('Bunny', ...levaProps.bunny);
-
   return (
-    <Canvas {...canvasProps} {...cameraProps} eventSource={document.getElementById('root')} eventPrefix='client'>
-      <color attach='background' args={[canvasProps.color]} />
+    <Canvas
+      shadows
+      dpr={[1, 1.5]}
+      camera={{ position: [-1.5, 1, 5.5], fov: 45, near: 1, far: 20 }}
+      eventSource={document.getElementById('root')}
+      eventPrefix='client'
+    >
+      <color attach='background' args={['black']} />
+
       <Lights />
-      <group {...sceneProps}>
+
+      <group position={[-0, -1, 0]}>
         <Instances>
-          <Computers {...computersProps} />
+          <Computers scale={0.5} />
         </Instances>
-        <Bunny {...bunnyProps} />
-        <Floor {...floorProps} />
+        <Bunny />
+        <Floor />
       </group>
+
       <Effects />
       <CameraRig />
       <BakeShadows />

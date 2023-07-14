@@ -1,15 +1,21 @@
 import { MeshReflectorMaterial } from '@react-three/drei';
-import { useControls } from 'leva';
 
-import { levaProps } from '.';
-
-export const Floor = (props) => {
-  const floorMaterialProps = useControls('Floor', ...levaProps.floorMaterial);
-
+export const Floor = () => {
   return (
-    <mesh {...props}>
+    <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
       <planeGeometry args={[50, 50]} />
-      <MeshReflectorMaterial {...floorMaterialProps} />
+      <MeshReflectorMaterial
+        blur={[300, 30]}
+        resolution={2048}
+        mixBlur={1}
+        mixStrength={80}
+        roughness={1}
+        depthScale={1.2}
+        minDepthThreshold={0.4}
+        maxDepthThreshold={1.4}
+        color='#202020'
+        metalness={0.8}
+      />
     </mesh>
   );
 };
