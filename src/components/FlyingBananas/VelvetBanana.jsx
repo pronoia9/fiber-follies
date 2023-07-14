@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const VelvetBanana = () => {
   return (
-    <a href='0xca0a.gumroad.com/l/B4N4N4S'>
+    <a href='https://0xca0a.gumroad.com/l/B4N4N4S' target='_blank'>
       <Image viewBox='0 0 1138 1191' fill='none' xmlns='http://www.w3.org/2000/svg'>
         <g className='skin'>
           <path
