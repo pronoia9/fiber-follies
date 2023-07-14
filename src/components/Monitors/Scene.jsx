@@ -14,8 +14,7 @@ export const Scene = () => {
     <Canvas {...canvasProps} {...cameraProps} eventSource={document.getElementById('root')} eventPrefix='client'>
       <color attach='background' args={[canvasProps.color]} />
       <Lights />
-
-      {/* Main Scene */}
+      
       <group position={[-0, -1, 0]}>
         <ComputersInstances>
           <Computers scale={0.5} />
