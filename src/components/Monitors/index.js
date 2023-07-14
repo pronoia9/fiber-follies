@@ -1,6 +1,7 @@
-import { Computers } from './Computers.jsx';
-import { Monitors } from './Monitors.jsx';
-import { Overlay } from './Overlay.jsx';
-import { SpinningBox } from './SpinningBox.jsx';
+import { Computers } from './Computers';
+import { Monitors } from './Monitors';
+import { Overlay } from './Overlay';
+import { Scene } from './Scene';
+import { SpinningBox } from './SpinningBox';
 
-export { Computers, Monitors, Overlay, SpinningBox };
+export { Computers, Monitors, Overlay, Scene, SpinningBox };
