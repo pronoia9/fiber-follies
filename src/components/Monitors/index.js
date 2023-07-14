@@ -1,5 +1,4 @@
-import { Computers } from './Computers';
-import { ComputersInstances } from './ComputersInstances';
+import { ComputersInstances, Computers } from './Computers';
 import { ComputersLeds } from './ComputersLeds';
 import { ComputersScreen } from './ComputersScreen';
 import { ComputersScreenInteractive } from './ComputersScreenInteractive';
