@@ -38,6 +38,7 @@ const Container = styled(Link)`
   pointer-events: all;
   overflow: hidden;
   padding: 0.1em;
+  z-index: 999999;
 
   svg {
     width: 20px;
