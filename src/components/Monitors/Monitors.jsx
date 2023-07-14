@@ -17,11 +17,6 @@ export const Monitors = () => {
 };
 
 const Container = styled.div`
-  @font-face {
-    font-family: 'Inter';
-    src: url('/src/assets/fonts/Inter/Inter-VariableFont_slnt,wght.ttf');
-  }
-
   width: 100%;
   height: 100%;
   margin: 0;
