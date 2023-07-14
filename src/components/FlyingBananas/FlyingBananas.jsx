@@ -1,8 +1,7 @@
 import { Suspense, useState } from 'react';
-import { styled } from 'styled-components';
+import { styled, keyframes } from 'styled-components';
 
 import { Bananas, Overlay } from '.';
-import { FadeIn, LeftMiddle } from './styles';
 
 export const FlyingBananas = () => {
   const [speed, set] = useState(1);
@@ -21,6 +20,11 @@ export const FlyingBananas = () => {
   );
 };
 
+export const fade = keyframes`
+  from { opacity: 1; }
+  to { opacity: 0; }
+`;
+
 const Container = styled.div`
   width: 100%;
   min-width: 100vw;
@@ -28,7 +32,8 @@ const Container = styled.div`
   min-height: 100vh;
   background: #ffd863;
 
-  *, a {
+  *,
+  a {
     color: black;
   }
 
@@ -56,4 +61,28 @@ const Container = styled.div`
   input[type='range']::-webkit-slider-thumb:active {
     transform: scale(1);
   }
+`;
+
+export const FadeIn = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: #ffd863;
+  animation: ${fade} 4s normal forwards ease-in-out;
+`;
+
+export const LeftMiddle = styled.div`
+  position: absolute;
+  bottom: 50%;
+  right: 5vw;
+  font-family: 'Inter';
+  font-weight: 400;
+  line-height: 1em;
+  letter-spacing: -0.01em;
+  font-size: 12px;
+  transform: rotate(90deg) translate3d(50%, 0, 0);
+  transform-origin: 100% 50%;
 `;
