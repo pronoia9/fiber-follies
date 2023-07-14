@@ -10,4 +10,18 @@ export const levaProps = {
     near: { value: 1 },
     far: { value: 20 },
   },
+
+  hemisphereLight: {
+    intensity: { value: 0.15 },
+    groundColor: { value: 'black' },
+  },
+
+  spotLight: {
+    position: { value: [10, 20, 10] },
+    angle: { value: 0.12 },
+    penumbra: { value: 1 },
+    intensity: { value: 1 },
+    castShadow: true,
+    'shadow-mapSize': { value: 1024 },
+  },
 };
