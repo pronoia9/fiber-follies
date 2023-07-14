@@ -26,6 +26,13 @@ export const levaProps = {
     'shadow-mapSize': { value: 1024 },
   },
 
+  pointLight: {
+    distance: { value: 1.5},
+    intensity: { value: 1},
+    position: { value: [-0.15, 0.7 - 1, 0]},
+    color: 'orange',
+  },
+
   scene: {
     position: { value: [-0, -1, 0] },
   },
