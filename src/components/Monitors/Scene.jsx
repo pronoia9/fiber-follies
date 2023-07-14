@@ -9,6 +9,8 @@ import { levaProps, Lights, Instances, Computers, Bunny, Floor } from './';
 export const Scene = () => {
   const canvasProps = useControls('Canvas', levaProps.canvas, { collapsed: true }),
     cameraProps = useControls('Camera', levaProps.camera),
+    sceneProps = useControls('Scene', levaProps.scene),
+    computersProps = useControls('Computers', levaProps.computers),
     bunnyProps = useControls('Bunny', levaProps.bunny);
 
   return (
@@ -16,9 +18,9 @@ export const Scene = () => {
       <color attach='background' args={[canvasProps.color]} />
       <Lights />
 
-      <group position={[-0, -1, 0]}>
+      <group {...sceneProps}>
         <Instances>
-          <Computers scale={0.5} />
+          <Computers {...computersProps} />
         </Instances>
         <Bunny {...bunnyProps} />
         <Floor />

@@ -26,6 +26,14 @@ export const levaProps = {
     'shadow-mapSize': { value: 1024 },
   },
 
+  scene: {
+    position: { value: [-0, -1, 0] },
+  },
+
+  computers: {
+    scale: { value: 0.5 },
+  },
+
   bunny: {
     scale: { value: 0.325 },
     position: { value: [0, 0, 0.5] },
