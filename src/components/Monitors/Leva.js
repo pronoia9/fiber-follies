@@ -39,4 +39,22 @@ export const levaProps = {
     position: { value: [0, 0, 0.5] },
     rotation: { value: [0, -Math.PI * 0.85, 0] },
   },
+
+  floor: {
+    receiveShadow: true,
+    rotation: { value: [-Math.PI / 2, 0, 0] },
+  },
+
+  floorMaterial: {
+    blur: { value: [300, 30] },
+    resolution: { value: 2048 },
+    mixBlur: { value: 1 },
+    mixStrength: { value: 80 },
+    roughness: { value: 1 },
+    depthScale: { value: 1.2 },
+    minDepthThreshold: { value: 0.4 },
+    maxDepthThreshold: { value: 1.4 },
+    color: '#202020',
+    metalness: { value: 0.8 },
+  },
 };
