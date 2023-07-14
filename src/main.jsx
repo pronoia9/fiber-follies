@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App';
-import { ThreejsJourneyLv1 } from './components';
+import { Monitors, ThreejsJourneyLv1 } from './components';
 
 const examples = [
-  { path: 'monitors', element: <></> },
+  { path: 'monitors', element: <Monitors /> },
   { path: 'flying-bananas', element: <></> },
   { path: 'room-with-soft-shadows', element: <></> },
   { path: 'tshirt-configurator', element: <></> },
