@@ -11,7 +11,7 @@ export const Monitors = () => {
 
   return (
     <Container>
-      <Leva collapsed />
+      <Leva collapsed={false} />
       <Overlay />
       <Scene />
     </Container>
