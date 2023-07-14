@@ -1,10 +1,13 @@
-import { Suspense, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { styled, keyframes } from 'styled-components';
 
 import { Bananas, Overlay } from '.';
+import { dataStore } from '../../store/dataStore';
 
 export const FlyingBananas = () => {
   const [speed, set] = useState(1);
+  const { setLogoPosition } = dataStore((state) => ({ setLogoPosition: state.setLogoPosition }));
+  useEffect(() => setLogoPosition(null), []);
 
   return (
     <Container>
