@@ -160,6 +160,9 @@ export const dataStore = create((set) => ({
   setTheme: (theme) => set({ theme }),
   toggleTheme: () => set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light' })),
 
+  logoPosition: 'top right',
+  setLogoPosition: (logoPosition) => set({ logoPosition }),
+
   tab: 'showcase',
   setTab: (tab) => set({ tab }),
 
@@ -284,7 +287,11 @@ export const dataStore = create((set) => ({
       { title: 'TransformControls And Make Default', path: 'transformcontrols-and-make-default', image: transformControlsAndMakeDefault },
       { title: 'Bounds and Make Default', path: 'bounds-and-make-default', image: boundsandMakeDefault },
       { title: 'Instanced Vertex Colors', path: 'instanced-vertex-colors', image: instancedVertexColors },
-      { title: 'Progressive Loading States With Suspense', path: 'progressive-loading-states-with-suspense', image: progressiveLoadingStatesWithSuspense },
+      {
+        title: 'Progressive Loading States With Suspense',
+        path: 'progressive-loading-states-with-suspense',
+        image: progressiveLoadingStatesWithSuspense,
+      },
       { title: 'View Tracking', path: 'view-tracking', image: viewTracking },
       { title: 'Multiple Views With Uniform Controls', path: 'multiple-views-with-uniform-controls', image: multipleViewsWithUniformControls },
       { title: 'Canvas And Text', path: 'canvas-and-text', image: canvasAndText },
