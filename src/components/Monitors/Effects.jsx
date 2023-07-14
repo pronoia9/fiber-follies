@@ -1,3 +1,15 @@
+import { EffectComposer, Bloom, DepthOfField } from '@react-three/postprocessing';
+import { useControls, folder } from 'leva';
+
+import { levaProps } from './Leva';
+
 export const Effects = () => {
-  return <div>Effects</div>;
+  const effects = useControls('Effects', ...levaProps.effects);
+
+  return (
+    <EffectComposer disableNormalPass>
+      <Bloom {...effects.Bloom} />
+      <DepthOfField {...effects['Depth Of Field']} />
+    </EffectComposer>
+  );
 };
