@@ -1,3 +1,5 @@
+import { Bunny } from './Bunny';
+import { CameraRig } from './CameraRig';
 import { Instances, Computers } from './Computers';
 import { Leds } from './ComputersLeds';
 import { Screen } from './ComputersScreen';
@@ -13,6 +15,8 @@ import { Overlay } from './Overlay';
 import { Scene } from './Scene';
 
 export {
+  Bunny,
+  CameraRig,
   Computers,
   Instances,
   Leds,
