@@ -25,4 +25,10 @@ export const levaProps = {
     castShadow: true,
     'shadow-mapSize': { value: 1024 },
   },
+
+  bunny: {
+    scale: { value: 0.325 },
+    position: { value: [0, 0, 0.5] },
+    rotation: { value: [0, -Math.PI * 0.85, 0] },
+  },
 };
