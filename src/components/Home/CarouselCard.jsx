@@ -34,6 +34,7 @@ const Container = styled.div`
   box-shadow: 0 10px 50px 10px ${({ theme }) => theme.carouselCardShadow};
   background: black;
   pointer-events: all;
+  cursor: pointer;
   transform: translate(var(--x), var(--y)) rotate(var(--rot));
   transition: transform 0.8s cubic-bezier(0, 0.02, 0, 1);
 
