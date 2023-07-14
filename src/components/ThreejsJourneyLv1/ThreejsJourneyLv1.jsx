@@ -4,14 +4,13 @@ import { styled } from 'styled-components';
 import { Leva, useControls } from 'leva';
 
 import { Cactus, Camera, Icon, levaProps, Level, Pyramid, Sudo } from '.';
-import { threejsJourneyLv1 as room } from '../../assets/3d';
 import { dataStore } from '../../store/dataStore.js';
 import { themes } from '../../styles/Themes';
 
 export const ThreejsJourneyLv1 = () => {
   const theme = dataStore((state) => state.theme);
-  const model = useGLTF(room);
-  const canvasOptions = useControls('Canvas', { ...levaProps.canvas, color: { value: themes[theme].accentPrimary } });
+  const model = useGLTF('/src/components/ThreejsJourneyLv1/model.glb');
+  const canvasOptions = useControls('Canvas', { ...levaProps.canvas, /* color: { value: themes[theme].accentPrimary } */ });
   const cameraOptions = useControls('Camera', levaProps.camera);
   const presentationControlsOptions = useControls('Presentation Controls', levaProps.presentationControls);
 
@@ -19,7 +18,7 @@ export const ThreejsJourneyLv1 = () => {
     <Container>
       <Leva collapsed={true} />
       <Canvas {...canvasOptions} camera={cameraOptions}>
-        <color attach='background' args={[canvasOptions.color]} />
+        {/* <color attach='background' args={[canvasOptions.color]} /> */}
         <ambientLight />
         <PresentationControls {...presentationControlsOptions}>
           <group position-y={-0.75} dispose={null}>
@@ -36,7 +35,7 @@ export const ThreejsJourneyLv1 = () => {
   );
 };
 
-useGLTF.preload(room);
+useGLTF.preload('/src/components/ThreejsJourneyLv1/model.glb');
 
 const Container = styled.div`
   filter: saturate(1.15) hue-rotate(345deg);
