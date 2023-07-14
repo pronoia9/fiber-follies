@@ -1,3 +1,5 @@
+import { folder } from 'leva';
+
 export const levaProps = {
   canvas: [
     {
@@ -91,6 +93,24 @@ export const levaProps = {
       maxDepthThreshold: { value: 1.4 },
       color: '#202020',
       metalness: { value: 0.8 },
+    },
+    { collapsed: true },
+  ],
+
+  effects: [
+    {
+      'Bloom': folder({
+        luminanceThreshold: { value: 0 },
+        mipmapBlur: { value: true },
+        luminanceSmoothing: { value: 0.0 },
+        intensity: { value: 6 },
+      }),
+      'Depth Of Field': folder({
+        target: { value: [0, 0, 13] },
+        focalLength: { value: 0.3 },
+        bokehScale: { value: 15 },
+        height: { value: 700 },
+      }),
     },
     { collapsed: true },
   ],
