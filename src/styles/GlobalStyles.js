@@ -280,35 +280,24 @@ export const GlobalStyles = createGlobalStyle`
   /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-
-  [type='number']::-webkit-inner-spin-button,
-  [type='number']::-webkit-outer-spin-button {
+  [type='number']::-webkit-inner-spin-button, [type='number']::-webkit-outer-spin-button {
     height: auto;
   }
 
-  /**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-
+  /* 1. Correct the odd appearance in Chrome and Safari.
+     2. Correct the outline style in Safari. */
   [type='search'] {
     -webkit-appearance: textfield; /* 1 */
     outline-offset: -2px; /* 2 */
   }
 
-  /**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
-
+  /* Remove the inner padding in Chrome and Safari on macOS. */
   [type='search']::-webkit-search-decoration {
     -webkit-appearance: none;
   }
 
-  /**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to 'inherit' in Safari.
- */
-
+  /* 1. Correct the inability to style clickable types in iOS and Safari.
+     2. Change font properties to 'inherit' in Safari. */
   ::-webkit-file-upload-button {
     -webkit-appearance: button; /* 1 */
     font: inherit; /* 2 */
@@ -317,37 +306,24 @@ export const GlobalStyles = createGlobalStyle`
   /* Interactive
    ========================================================================== */
 
-  /*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
-
+  /* Add the correct display in Edge, IE 10+, and Firefox. */
   details {
     display: block;
   }
 
-  /*
- * Add the correct display in all browsers.
- */
-
+  /* Add the correct display in all browsers. */
   summary {
     display: list-item;
   }
 
   /* Misc
    ========================================================================== */
-
-  /**
- * Add the correct display in IE 10+.
- */
-
+  /* Add the correct display in IE 10+. */
   template {
     display: none;
   }
 
-  /**
- * Add the correct display in IE 10.
- */
-
+  /* Add the correct display in IE 10. */
   [hidden] {
     display: none;
   }
@@ -438,10 +414,14 @@ export const GlobalStyles = createGlobalStyle`
     min-width: 100vw;
     height: 100%;
     min-height: 100vh;
-    color: var(--c-font);
+    color: var(--c-font-primary);
     overflow-x: hidden;
     transition: color 0.5s ease-in-out;
   }
+    svg {
+      fill: var(--c-font-primary);
+      opacity: 0.75;
+    }
 
   #root {
     font-family: var(--f-primary);
