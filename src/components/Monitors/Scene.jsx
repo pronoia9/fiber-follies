@@ -7,12 +7,12 @@ import { useControls } from 'leva';
 import { levaProps, Lights, Instances, Computers, Bunny, Floor } from './';
 
 export const Scene = () => {
-  const canvasProps = useControls('Canvas', levaProps.canvas, { collapsed: true }),
-    cameraProps = useControls('Camera', levaProps.camera),
-    sceneProps = useControls('Scene', levaProps.scene),
-    computersProps = useControls('Computers', levaProps.computers),
-    floorProps = useControls('Floor', levaProps.floor),
-    bunnyProps = useControls('Bunny', levaProps.bunny);
+  const canvasProps = useControls('Canvas', ...levaProps.canvas),
+    cameraProps = useControls('Camera', ...levaProps.camera),
+    sceneProps = useControls('Scene', ...levaProps.scene),
+    computersProps = useControls('Computers', ...levaProps.computers),
+    floorProps = useControls('Floor', ...levaProps.floor),
+    bunnyProps = useControls('Bunny', ...levaProps.bunny);
 
   return (
     <Canvas {...canvasProps} {...cameraProps} eventSource={document.getElementById('root')} eventPrefix='client'>

@@ -4,7 +4,7 @@ import { useControls } from 'leva';
 import { levaProps } from '.';
 
 export const Floor = (props) => {
-  const floorMaterialProps = useControls('Floor', levaProps.floorMaterial);
+  const floorMaterialProps = useControls('Floor', ...levaProps.floorMaterial);
 
   return (
     <mesh {...props}>
