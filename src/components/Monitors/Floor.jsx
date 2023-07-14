@@ -3,12 +3,11 @@ import { useControls } from 'leva';
 
 import { levaProps } from '.';
 
-export const Floor = () => {
-  const floorProps = useControls('Floor', levaProps.floor),
-    floorMaterialProps = useControls('Floor', levaProps.floorMaterial);
+export const Floor = (props) => {
+  const floorMaterialProps = useControls('Floor', levaProps.floorMaterial);
 
   return (
-    <mesh {...floorProps}>
+    <mesh {...props}>
       <planeGeometry args={[50, 50]} />
       <MeshReflectorMaterial {...floorMaterialProps} />
     </mesh>

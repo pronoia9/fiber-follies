@@ -11,6 +11,7 @@ export const Scene = () => {
     cameraProps = useControls('Camera', levaProps.camera),
     sceneProps = useControls('Scene', levaProps.scene),
     computersProps = useControls('Computers', levaProps.computers),
+    floorProps = useControls('Floor', levaProps.floor),
     bunnyProps = useControls('Bunny', levaProps.bunny);
 
   return (
@@ -23,7 +24,7 @@ export const Scene = () => {
           <Computers {...computersProps} />
         </Instances>
         <Bunny {...bunnyProps} />
-        <Floor />
+        <Floor {...floorProps} />
       </group>
     </Canvas>
   );
