@@ -5,14 +5,17 @@ import { Leva, useControls } from 'leva';
 
 import { Cactus, Camera, Icon, levaProps, Level, Pyramid, Sudo } from '.';
 import { dataStore } from '../../store/dataStore.js';
-import { themes } from '../../styles/Themes';
+import { useEffect } from 'react';
+// import { themes } from '../../styles/Themes';
 
 export const ThreejsJourneyLv1 = () => {
-  const theme = dataStore((state) => state.theme);
+  const { theme, setLogoPosition } = dataStore((state) => ({ theme: state.theme, setLogoPosition: state.setLogoPosition }));
   const model = useGLTF('/src/components/ThreejsJourneyLv1/model.glb');
   const canvasOptions = useControls('Canvas', { ...levaProps.canvas, /* color: { value: themes[theme].accentPrimary } */ });
   const cameraOptions = useControls('Camera', levaProps.camera);
   const presentationControlsOptions = useControls('Presentation Controls', levaProps.presentationControls);
+
+  useEffect(() => { setLogoPosition('top left'); }, []);
 
   return (
     <Container>
