@@ -27,18 +27,13 @@ const Container = styled.div`
   margin: 0;
   padding: 0;
 
-  a {
-    color: #f0f0f0;
+  *, svg {
+    color: #ffffff75;
   }
 
   a {
     pointer-events: all;
-    color: #f0f0f0;
     text-decoration: none;
-  }
-
-  svg {
-    fill: #f0f0f0;
   }
 
   @keyframes fade-in {
@@ -48,12 +43,6 @@ const Container = styled.div`
     to {
       opacity: 1;
     }
-  }
-
-  canvas {
-    opacity: 0;
-    touch-action: none;
-    animation: fade-in 5s ease 1s forwards;
   }
 
   input {
@@ -73,5 +62,9 @@ const Container = styled.div`
   input:focus {
     outline: none;
     box-shadow: none !important;
+  }
+
+  & > div:first-child {
+    z-index: 10;
   }
 `;
