@@ -43,17 +43,8 @@ useGLTF.preload('/src/components/ThreejsJourneyLv1/model.glb');
 const Container = styled.div`
   filter: saturate(1.15) hue-rotate(345deg);
 
-  &, canvas {
-    width: 100%;
-    min-height: 100vw;
-    height: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &, * {
+  &,
+  * {
     touch-action: none;
   }
 
@@ -65,12 +56,7 @@ const Container = styled.div`
       opacity: 1;
     }
   }
-
-  canvas {
-    opacity: 0;
-    animation: fade-in 1s ease 0.3s forwards;
-  }
-
+  
   canvas:active {
     cursor: grabbing;
   }

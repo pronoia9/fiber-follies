@@ -123,4 +123,13 @@ export const GlobalStyles = createGlobalStyle`
       transition-duration: 0.7s;
     }
   }
+
+  canvas {
+    width: 100%;
+    min-height: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    opacity: 0;
+    animation: fade-in 1s ease 0.3s forwards;
+  }
 `;
