@@ -3,7 +3,7 @@ import { useGLTF, MeshReflectorMaterial, BakeShadows } from '@react-three/drei';
 import { EffectComposer, Bloom, DepthOfField } from '@react-three/postprocessing';
 import { easing } from 'maath';
 
-import { levaProps, Lights, Instances, Computers, Floor } from './';
+import { levaProps, Lights, Instances, Computers, Bunny, Floor } from './';
 import { useControls } from 'leva';
 
 export const Scene = () => {
@@ -19,6 +19,7 @@ export const Scene = () => {
         <Instances>
           <Computers scale={0.5} />
         </Instances>
+        <Bunny scale={0.325} position={[0, 0, 0.5]} rotation={[0, -Math.PI * 0.85, 0]} />
         <Floor />
       </group>
     </Canvas>
