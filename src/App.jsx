@@ -9,7 +9,11 @@ import { getTheme, systemThemeChangeHandler } from './utils/utils.js';
 
 export default function App() {
   const location = useLocation();
-  const { theme, setTheme } = dataStore((state) => ({ theme: state.theme, setTheme: state.setTheme, }));
+  const { theme, setTheme, setLogoPosition } = dataStore((state) => ({
+    theme: state.theme,
+    setTheme: state.setTheme,
+    setLogoPosition: state.setLogoPosition,
+  }));
   const cursorRefs = useRef([]);
 
   // Event listener for system theme change
@@ -25,6 +29,8 @@ export default function App() {
     document.addEventListener('mousemove', handleMouseMove);
     return () => { document.removeEventListener('mousemove', handleMouseMove); };
   }, []);
+
+  useEffect(() => { location.pathname === '/' && setLogoPosition('top right'); }, [location]);
 
   return (
     <ThemeProvider theme={getTheme(theme)}>
