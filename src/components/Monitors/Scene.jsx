@@ -1,10 +1,8 @@
-import { Canvas, useFrame } from '@react-three/fiber';
-import { useGLTF, MeshReflectorMaterial, BakeShadows } from '@react-three/drei';
-import { EffectComposer, Bloom, DepthOfField } from '@react-three/postprocessing';
-import { easing } from 'maath';
+import { Canvas } from '@react-three/fiber';
+import { BakeShadows } from '@react-three/drei';
 import { useControls } from 'leva';
 
-import { levaProps, Lights, Instances, Computers, Bunny, Floor } from './';
+import { levaProps, Lights, Instances, Computers, Bunny, Floor, CameraRig, Effects } from './';
 
 export const Scene = () => {
   const canvasProps = useControls('Canvas', ...levaProps.canvas),
@@ -18,7 +16,6 @@ export const Scene = () => {
     <Canvas {...canvasProps} {...cameraProps} eventSource={document.getElementById('root')} eventPrefix='client'>
       <color attach='background' args={[canvasProps.color]} />
       <Lights />
-
       <group {...sceneProps}>
         <Instances>
           <Computers {...computersProps} />
@@ -26,6 +23,9 @@ export const Scene = () => {
         <Bunny {...bunnyProps} />
         <Floor {...floorProps} />
       </group>
+      <Effects />
+      <CameraRig />
+      <BakeShadows />
     </Canvas>
   );
 };
