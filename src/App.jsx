@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
@@ -8,9 +8,9 @@ import { GlobalStyles } from './styles/GlobalStyles.js';
 import { getTheme, systemThemeChangeHandler } from './utils/utils.js';
 
 export default function App() {
-  const { theme, setTheme } = dataStore((state) => ({ theme: state.theme, setTheme: state.setTheme }));
-  const cursorRefs = useRef([]);
   const location = useLocation();
+  const { theme, setTheme } = dataStore((state) => ({ theme: state.theme, setTheme: state.setTheme, }));
+  const cursorRefs = useRef([]);
 
   // Event listener for system theme change
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function App() {
   return (
     <ThemeProvider theme={getTheme(theme)}>
       <GlobalStyles />
-      <Logo position={location.pathname !== '/' && 'left'} />
+      <Logo />
       {location.pathname === '/' && (
         <>
           <Carousel />
