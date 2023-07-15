@@ -162,9 +162,21 @@ export const dataStore = create((set) => ({
 
   logoPosition: 'top right',
   setLogoPosition: (logoPosition) => set({ logoPosition }),
-
+  
   tab: 'showcase',
+  progresses: { showcase: 0, 'game prototypes': 0, 'basic examples': 0 },
+  actives: { showcase: 0, 'game prototypes': 0, 'basic examples': 0 },
   setTab: (tab) => set({ tab }),
+  setProgress: (progress) => {
+    set((state) => {
+      let prev = state.progresses;
+      prev[state.tab] = progress;
+      return prev;
+    });
+  },
+  setActive: (active) => {
+    set((state) => ({ active: { ...state.active, [state.tab]: active } }));
+  },
 
   data: {
     showcase: [
