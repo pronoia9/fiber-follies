@@ -7,11 +7,15 @@ export const Model = (props) => {
   const { nodes, materials, animations } = useGLTF('/src/pages/GltfAnimationsTiedToScroll/assets/jump-transformed.glb');
   const { ref, actions } = useAnimations(animations);
 
+  // When the component is first displayed, reset and pause the "jump" animation
   useEffect(() => {
     actions.jump.reset().play().paused = true;
   }, []);
 
+  // Update the animation frame based on the scroll offset
   useFrame(() => {
+    // Calculate the time of the "jump" animation based on scroll offset
+    // As you scroll, the character's jump animation progresses accordingly
     actions.jump.time = actions.jump.getClip().duration * scroll.offset;
   });
 
