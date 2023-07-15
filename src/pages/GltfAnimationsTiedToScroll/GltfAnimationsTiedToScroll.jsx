@@ -1,10 +1,11 @@
 import { styled } from 'styled-components';
+import { Scene } from '.';
 
 export const GltfAnimationsTiedToScroll = () => {
   return (
     <Container>
       <Wrapper>
-        
+        <Scene />
       </Wrapper>
     </Container>
   );
