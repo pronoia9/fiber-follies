@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import 'normalize.css/normalize.css';
 import App from './App';
-import { Monitors, FlyingBananas, ThreejsJourneyLv1 } from './pages';
+import { Monitors, FlyingBananas, ThreejsJourneyLv1, GltfAnimationsTiedToScroll } from './pages';
 
 const examples = [
   { path: 'monitors', element: <Monitors /> },
@@ -42,7 +42,7 @@ const examples = [
   { path: 'spline-glass-shapes', element: <></> },
   { path: 'csg-bunny-usegroups', element: <></> },
   { path: 'csg-house', element: <></> },
-  { path: 'gltf-animations-tied-to-scroll', element: <></> },
+  { path: 'gltf-animations-tied-to-scroll', element: <GltfAnimationsTiedToScroll /> },
   { path: 'object-clump', element: <></> },
   { path: 'html-input-fields', element: <></> },
   { path: 'useintersect-and-scrollcontrols', element: <></> },
