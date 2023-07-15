@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { styled } from 'styled-components';
 
-import { Overlay, Scene } from './';
+import { Overlay, Scene } from '.';
 import { dataStore } from '../../store/dataStore';
 
 export const Monitors = () => {

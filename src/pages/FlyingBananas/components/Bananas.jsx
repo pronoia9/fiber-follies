@@ -5,7 +5,7 @@ import { Environment } from '@react-three/drei';
 // https://github.com/vanruesc/postprocessing
 import { EffectComposer, DepthOfField } from '@react-three/postprocessing';
 
-import { Banana } from '.';
+import { Banana } from '..';
 
 export const Bananas = ({ speed = 1, count = 80, depth = 80, easing = (x) => Math.sqrt(1 - Math.pow(x - 1, 2)) }) => {
   return (

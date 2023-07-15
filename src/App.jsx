@@ -1,19 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
+import { useEffect, useRef } from 'react';
+import { Outlet } from 'react-router-dom';
+import { ThemeProvider, styled } from 'styled-components';
 
-import { Carousel, Layout, Logo, Socials } from './components';
+import { Home } from './pages';
 import { dataStore } from './store/dataStore';
 import { GlobalStyles } from './styles/GlobalStyles.js';
 import { getTheme, systemThemeChangeHandler } from './utils/utils.js';
 
 export default function App() {
-  const location = useLocation();
-  const { theme, setTheme, setLogoPosition } = dataStore((state) => ({
-    theme: state.theme,
-    setTheme: state.setTheme,
-    setLogoPosition: state.setLogoPosition,
-  }));
+  const { theme, setTheme } = dataStore((state) => ({ theme: state.theme, setTheme: state.setTheme }));
   const cursorRefs = useRef([]);
 
   // Event listener for system theme change
@@ -30,22 +25,17 @@ export default function App() {
     return () => { document.removeEventListener('mousemove', handleMouseMove); };
   }, []);
 
-  useEffect(() => { location.pathname === '/' && setLogoPosition('top right'); }, [location]);
-
   return (
     <ThemeProvider theme={getTheme(theme)}>
       <GlobalStyles />
-      <Logo />
-      {location.pathname === '/' && (
-        <>
-          <Carousel />
-          <Layout />
-          <Socials />
-        </>
-      )}
+      <Home />
       <Outlet />
-      <div ref={(ref) => (cursorRefs.current[0] = ref)} className='cursor' />
-      <div ref={(ref) => (cursorRefs.current[1] = ref)} className='cursor cursor2' />
+      {/* <Cursor> */}
+        <div ref={(ref) => (cursorRefs.current[0] = ref)} className='cursor' />
+        <div ref={(ref) => (cursorRefs.current[1] = ref)} className='cursor cursor2' />
+      {/* </Cursor> */}
     </ThemeProvider>
   );
 }
+
+const Cursor = styled.div``;

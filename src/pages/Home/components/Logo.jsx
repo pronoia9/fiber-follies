@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { css, styled } from 'styled-components';
 
-import { dataStore } from '../../store/dataStore';
+import { dataStore } from '../../../store/dataStore';
 
 export const Logo = () => {
   const { logoPosition } = dataStore((state) => ({ logoPosition: state.logoPosition, }));

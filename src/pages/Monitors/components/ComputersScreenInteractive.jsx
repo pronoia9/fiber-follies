@@ -1,5 +1,6 @@
 import { PerspectiveCamera } from '@react-three/drei';
-import { Screen, SpinningBox } from '.';
+
+import { Screen, SpinningBox } from '..';
 
 // Renders a monitor with a spinning box
 export const ScreenInteractive = (props) => {

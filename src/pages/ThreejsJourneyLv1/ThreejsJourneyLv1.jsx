@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 
 export const ThreejsJourneyLv1 = () => {
   const { theme, setLogoPosition } = dataStore((state) => ({ theme: state.theme, setLogoPosition: state.setLogoPosition }));
-  const model = useGLTF('/src/components/ThreejsJourneyLv1/model.glb');
+  const model = useGLTF('/src/pages/ThreejsJourneyLv1/assets/model.glb');
   const canvasOptions = useControls('Canvas', { ...levaProps.canvas, /* color: { value: themes[theme].accentPrimary } */ });
   const cameraOptions = useControls('Camera', levaProps.camera);
   const presentationControlsOptions = useControls('Presentation Controls', levaProps.presentationControls);

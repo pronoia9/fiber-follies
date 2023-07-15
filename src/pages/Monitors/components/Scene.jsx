@@ -1,7 +1,7 @@
 import { Canvas } from '@react-three/fiber';
 import { BakeShadows } from '@react-three/drei';
 
-import { Lights, Instances, Computers, Bunny, Floor, CameraRig, Effects } from './';
+import { Lights, Instances, Computers, Bunny, Floor, CameraRig, Effects } from '..';
 
 export const Scene = () => {
   return (

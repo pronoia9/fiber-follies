@@ -1,5 +1,6 @@
 import { styled } from 'styled-components';
-import { dataStore } from '../../store/dataStore';
+
+import { dataStore } from '../../../store/dataStore';
 
 export const Layout = () => {
   const { tabs, tab, setTab } = dataStore((state) => ({ tabs: Object.keys(state.data), tab: state.tab, setTab: state.setTab }));

@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { PerspectiveCamera, Text } from '@react-three/drei';
 
-import { Screen } from '.';
+import { Screen } from '..';
 
 // Renders a monitor with some text
 export const ScreenText = ({ invert, x = 0, y = 1.2, ...props }) => {

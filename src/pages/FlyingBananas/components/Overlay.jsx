@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 import { Logo } from '@pmndrs/branding';
 
-import { VelvetBanana } from '.';
+import { VelvetBanana } from '..';
 
 export const Overlay = () => {
   return (

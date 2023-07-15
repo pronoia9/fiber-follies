@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 
-import { CarouselCard } from './CarouselCard';
-import { dataStore } from '../../store/dataStore';
+import { CarouselCard } from '..';
+import { dataStore } from '../../../store/dataStore';
 
 export const Carousel = () => {
   const { data, tab } = dataStore((state) => ({ data: state.data, tab: state.tab }));

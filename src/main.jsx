@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import 'normalize.css/normalize.css';
 import App from './App';
-import { Monitors, FlyingBananas, ThreejsJourneyLv1 } from './components';
+import { Monitors, FlyingBananas, ThreejsJourneyLv1 } from './pages';
 
 const examples = [
   { path: 'monitors', element: <Monitors /> },
