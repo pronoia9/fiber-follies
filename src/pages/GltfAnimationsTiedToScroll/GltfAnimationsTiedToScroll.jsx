@@ -25,5 +25,5 @@ const Wrapper = styled(Container)`
   position: fixed;
   overflow: hidden;
   overscroll-behavior-y: none;
-  background: #f0f0f0;
+  background: ${({ theme }) => theme.bgPrimary};
 `;
