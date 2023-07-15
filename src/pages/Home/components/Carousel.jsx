@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 import { CarouselCard } from '..';
@@ -15,7 +14,6 @@ export const Carousel = () => {
   const speedWheel = 0.01,
     speedDrag = -0.1,
     gap = 10;
-  const navigate = useNavigate();
 
   const getZindex = (index) => refs.current.map((_, i) => (index === i ? refs.current.length : refs.current.length - Math.abs(index - i)));
 
@@ -51,10 +49,6 @@ export const Carousel = () => {
     setProgress(index);
   };
 
-  const handleDoubleClick = (path) => {
-    navigate(path);
-  }
-
   const handleKeyDown = ({ code }) => {
     const direction = (code === 'ArrowRight' || code === 'ArrowDown') ? 1 : (code === 'ArrowLeft' || code === 'ArrowUp') ? -1 : 0;
     setProgress((prev) => prev + direction);
@@ -80,14 +74,13 @@ export const Carousel = () => {
 
   return (
     <Container className='carousel'>
-      {data[tab]?.map(({ path, ...ex }, index) => (
+      {data[tab]?.map((ex, index) => (
         <CarouselCard
           key={`carousel-card-${index}`}
           index={index}
           refs={refs}
           {...ex}
           onClick={() => { handleClick(index + 1); }}
-          onDoubleClick={() => { handleDoubleClick(path); }}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
