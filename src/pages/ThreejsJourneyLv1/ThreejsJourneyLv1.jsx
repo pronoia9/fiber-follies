@@ -38,7 +38,7 @@ export const ThreejsJourneyLv1 = () => {
   );
 };
 
-useGLTF.preload('/src/components/ThreejsJourneyLv1/model.glb');
+useGLTF.preload('/src/pages/ThreejsJourneyLv1/assets/model.glb');
 
 const Container = styled.div`
   filter: saturate(1.15) hue-rotate(345deg);
