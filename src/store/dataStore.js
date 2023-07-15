@@ -157,26 +157,30 @@ import { getSystemTheme } from '../utils/utils';
 
 export const dataStore = create((set) => ({
   theme: getSystemTheme(),
-  setTheme: (theme) => set({ theme }),
-  toggleTheme: () => set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light' })),
+  setTheme: (theme) => { set({ theme }); },
+  toggleTheme: () => { set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light' })); },
 
   logoPosition: 'top right',
-  setLogoPosition: (logoPosition) => set({ logoPosition }),
-  
+  setLogoPosition: (logoPosition) => { set({ logoPosition }); },
+
   tab: 'showcase',
-  progresses: { showcase: 0, 'game prototypes': 0, 'basic examples': 0 },
-  actives: { showcase: 0, 'game prototypes': 0, 'basic examples': 0 },
-  setTab: (tab) => set({ tab }),
-  setProgress: (progress) => {
-    set((state) => {
-      let prev = state.progresses;
-      prev[state.tab] = progress;
-      return prev;
-    });
-  },
-  setActive: (active) => {
-    set((state) => ({ active: { ...state.active, [state.tab]: active } }));
-  },
+  // progress: 0,
+  // active: 0,
+  // progresses: { showcase: 0, 'game prototypes': 0, 'basic examples': 0 },
+  // actives: { showcase: 0, 'game prototypes': 0, 'basic examples': 0 },
+  setTab: (tab) => { set({ tab }); },
+  // setProgress: (progress) => { set({ progress }); },
+  // setActive: (active) => { set({ active }); },
+  // setProgress: (progress) => {
+  //   set((state) => {
+  //     let prev = state.progresses;
+  //     prev[state.tab] = progress;
+  //     return prev;
+  //   });
+  // },
+  // setActive: (active) => {
+  //   set((state) => ({ active: { ...state.active, [state.tab]: active } }));
+  // },
 
   data: {
     showcase: [
