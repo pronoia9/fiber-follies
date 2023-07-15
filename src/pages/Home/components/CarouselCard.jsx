@@ -1,8 +1,16 @@
+import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 
-export const CarouselCard = ({ index, refs, title, image, ...props }) => {
+export const CarouselCard = ({ index, refs, title, image, path, link, ...props }) => {
+  const navigate = useNavigate();
+
+  const handleDoubleClick = () => {
+    if (link) window.open(link, '_blank', 'rel=noopener noreferrer');
+    else navigate(path);
+  };
+
   return (
-    <Container ref={(ref) => (refs.current[index] = ref)} className='carousel-item' {...props}>
+    <Container ref={(ref) => (refs.current[index] = ref)} className='carousel-item' {...props} onDoubleClick={handleDoubleClick}>
       <div className='carousel-box'>
         <div className='title'>{title}</div>
         <div className='num'>{`${index + 1}`.padStart(2, '0')}</div>
