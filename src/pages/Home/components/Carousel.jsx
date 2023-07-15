@@ -5,7 +5,10 @@ import { CarouselCard } from '..';
 import { dataStore } from '../../../store/dataStore';
 
 export const Carousel = () => {
-  const { data, tab } = dataStore((state) => ({ data: state.data, tab: state.tab }));
+  const { data, tab } = dataStore((state) => ({
+    data: state.data,
+    tab: state.tab,
+  }));
   const refs = useRef([]);
   const [progress, setProgress] = useState(0),
     [startX, setStartX] = useState(0),
@@ -66,7 +69,7 @@ export const Carousel = () => {
     return () => { document.removeEventListener('keydown', handleKeyDown); };
   }, []);
 
-  useEffect(() => { setProgress((prev) => Math.max(0, Math.min(prev, 100))); }, [active, progress, startX, isDown]);
+  useEffect(() => { setProgress((prev) => Math.max(0, Math.min(prev, 100))); }, [progress]);
 
   useEffect(() => { setActive(Math.floor((progress / 100) * (refs.current.length - 1))); }, [progress]);
 
