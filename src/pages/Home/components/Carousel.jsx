@@ -10,13 +10,11 @@ export const Carousel = () => {
     tab: state.tab,
   }));
   const refs = useRef([]);
-  const [progress, setProgress] = useState(0),
-    [startX, setStartX] = useState(0),
+  const [progress, setProgress] = useState(73),
     [active, setActive] = useState(0),
+    [startX, setStartX] = useState(0),
     [isDown, setIsDown] = useState(false);
-  const speedWheel = 0.01,
-    speedDrag = -0.1,
-    gap = 10;
+  const speedWheel = 0.01, speedDrag = -0.1, gap = 10;
 
   const getZindex = (index) => refs.current.map((_, i) => (index === i ? refs.current.length : refs.current.length - Math.abs(index - i)));
 
@@ -49,13 +47,29 @@ export const Carousel = () => {
   };
 
   const handleClick = (index) => {
-    setProgress(index);
+    const calc = (index * 100) / data[tab]?.length;
+    setProgress(calc + 1);
   };
 
   const handleKeyDown = ({ code }) => {
     const direction = (code === 'ArrowRight' || code === 'ArrowDown') ? 1 : (code === 'ArrowLeft' || code === 'ArrowUp') ? -1 : 0;
     setProgress((prev) => prev + direction);
   }
+
+  useEffect(() => {
+    setActive(0);
+    setProgress(0);
+    // refs.current = refs.current.filter((d) => d !== null);
+  }, [tab]);
+  
+  useEffect(() => {
+    setProgress(Math.max(0, Math.min(progress, 100)));
+    setActive(Math.floor((progress / 100) * (data[tab].length - 1)));
+  }, [progress]);
+  
+  useEffect(() => { refs?.current.length && refs.current.forEach((item, index) => displayItems(item, index, active)); }, [active, tab]);
+  
+  // useEffect(() => { console.log('len:', data[tab].length, ' |  active:', active, ' |  progress:', progress); }, [active, progress, tab, refs]);
 
   // Event listener for mouse wheel
   useEffect(() => {
@@ -69,21 +83,15 @@ export const Carousel = () => {
     return () => { document.removeEventListener('keydown', handleKeyDown); };
   }, []);
 
-  useEffect(() => { setProgress((prev) => Math.max(0, Math.min(prev, 100))); }, [progress]);
-
-  useEffect(() => { setActive(Math.floor((progress / 100) * (refs.current.length - 1))); }, [progress]);
-
-  useEffect(() => { refs?.current.length && refs.current.forEach((item, index) => displayItems(item, index, active)); }, [active, tab]);
-
   return (
     <Container className='carousel'>
-      {data[tab]?.map((ex, index) => (
+      {data[tab]?.map((item, index) => (
         <CarouselCard
           key={`carousel-card-${index}`}
           index={index}
           refs={refs}
-          {...ex}
-          onClick={() => { handleClick(index + 1); }}
+          {...item}
+          onClick={() => { handleClick(index); }}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
