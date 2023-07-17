@@ -50,7 +50,7 @@ export const Carousel = () => {
 
   const handleClick = (index) => {
     const calc = (index * 100) / data[tab]?.length;
-    setProgress(calc);
+    setProgress(calc + 1);
   };
 
   const handleKeyDown = ({ code }) => {
@@ -81,13 +81,13 @@ export const Carousel = () => {
 
   return (
     <Container className='carousel'>
-      {data[tab]?.map((ex, index) => (
+      {data[tab]?.map((item, index) => (
         <CarouselCard
           key={`carousel-card-${index}`}
           index={index}
           refs={refs}
-          {...ex}
-          onClick={() => { handleClick(index + 1); }}
+          {...item}
+          onClick={() => { handleClick(index); }}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
