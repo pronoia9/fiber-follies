@@ -15,7 +15,6 @@ const Container = styled.div`
   gap: 5px;
 
   svg {
-    --fill: var(--c-font-primary);
     width: 35px;
     height: 35px;
   }
