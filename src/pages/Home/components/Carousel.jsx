@@ -11,12 +11,10 @@ export const Carousel = () => {
   }));
   const refs = useRef([]);
   const [progress, setProgress] = useState(0),
-    [startX, setStartX] = useState(0),
     [active, setActive] = useState(0),
+    [startX, setStartX] = useState(0),
     [isDown, setIsDown] = useState(false);
-  const speedWheel = 0.01,
-    speedDrag = -0.1,
-    gap = 10;
+  const speedWheel = 0.01, speedDrag = -0.1, gap = 10;
 
   const getZindex = (index) => refs.current.map((_, i) => (index === i ? refs.current.length : refs.current.length - Math.abs(index - i)));
 
@@ -58,6 +56,21 @@ export const Carousel = () => {
     setProgress((prev) => prev + direction);
   }
 
+  useEffect(() => {
+    setActive(0);
+    setProgress(0);
+    // refs.current = refs.current.filter((d) => d !== null);
+  }, [tab]);
+  
+  useEffect(() => {
+    setProgress(Math.max(0, Math.min(progress, 100)));
+    setActive(Math.floor((progress / 100) * (data[tab].length - 1)));
+  }, [progress]);
+  
+  useEffect(() => { refs?.current.length && refs.current.forEach((item, index) => displayItems(item, index, active)); }, [active]);
+  
+  // useEffect(() => { console.log('len:', data[tab].length, ' |  active:', active, ' |  progress:', progress); }, [active, progress, tab, refs]);
+
   // Event listener for mouse wheel
   useEffect(() => {
     document.addEventListener('mousewheel', handleWheel);
@@ -69,12 +82,6 @@ export const Carousel = () => {
     document.addEventListener('keydown', handleKeyDown);
     return () => { document.removeEventListener('keydown', handleKeyDown); };
   }, []);
-
-  useEffect(() => { setProgress(Math.max(0, Math.min(progress, 100))); }, [progress]);
-
-  useEffect(() => { setActive(Math.floor((progress / 100) * (refs.current.length - 1))); }, [progress]);
-
-  useEffect(() => { refs?.current.length && refs.current.forEach((item, index) => displayItems(item, index, active)); }, [active, tab]);
 
   return (
     <Container className='carousel'>
