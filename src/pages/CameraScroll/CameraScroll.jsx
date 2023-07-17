@@ -1,12 +1,19 @@
+import { useRef } from 'react';
 import { styled } from 'styled-components';
 
 import { Scene, Overlay } from '.';
 
 export const CameraScroll = () => {
-  return <Container>
-    <Scene />
-    <Overlay />
-  </Container>;
+  const overlay = useRef(),
+    caption = useRef(),
+    scroll = useRef(0);
+
+  return (
+    <Container>
+      <Scene overlay={overlay} caption={caption} scroll={scroll} />
+      <Overlay ref={overlay} caption={caption} scroll={scroll} />
+    </Container>
+  );
 };
 
 const Container = styled.div`
@@ -19,7 +26,8 @@ const Container = styled.div`
   font-family: 'Inter var', sans-serif;
   -webkit-font-smoothing: antialiased;
 
-  &, .scroll {
+  &,
+  .scroll {
     width: 100%;
     height: 100%;
     margin: 0;
