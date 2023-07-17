@@ -49,7 +49,7 @@ export const Carousel = () => {
   };
 
   const handleClick = (index) => {
-    setProgress(index);
+    setProgress((data[tab]?.length / 100) * index);
   };
 
   const handleKeyDown = ({ code }) => {
