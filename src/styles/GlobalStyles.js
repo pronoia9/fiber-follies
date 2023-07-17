@@ -69,10 +69,10 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
     transition: color 0.5s ease-in-out;
   }
-    svg {
-      fill: var(--c-font-primary);
-      opacity: 0.75;
-    }
+  
+  svg {
+    fill: var(--c-font-primary);
+  }
 
   #root {
     font-family: var(--f-primary);
