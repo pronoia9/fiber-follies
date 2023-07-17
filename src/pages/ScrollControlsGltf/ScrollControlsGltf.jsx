@@ -6,11 +6,10 @@ import { Lights, Model } from '.';
 
 export const ScrollControlsGltf = () => {
   return (
-    <Canvas>
+    <Canvas shadows camera={{ position: [0, 0, 10] }}>
       <Lights />
       <fog attach='fog' args={['#ff5020', 5, 18]} />
       <Sky scale={1000} sunPosition={[2, 0.4, 10]} />
-
       <Suspense fallback={null}>
         <ScrollControls pages={3}>
           <Model scale={0.02} position={[0, 2.5, 0]} />
