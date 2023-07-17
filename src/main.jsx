@@ -4,7 +4,15 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import 'normalize.css/normalize.css';
 import App from './App';
-import { Monitors, FlyingBananas, ThreejsJourneyLv1, GltfAnimationsTiedToScroll, ScrollControlsGltf, CameraScroll } from './pages';
+import {
+  /* 01 */ Monitors,
+  /* 02 */ FlyingBananas,
+  /* 26 */ ThreejsJourneyLv1,
+  /* 36 */ GltfAnimationsTiedToScroll,
+  /* 67 */ BouncyWatch,
+  /* 71 */ ScrollControlsGltf,
+  /* 77 */ CameraScroll,
+} from './pages';
 
 const examples = [
   { /* 01 */ path: 'monitors', element: <Monitors /> },
@@ -73,7 +81,7 @@ const examples = [
   { /* 64 */ path: 'pmndrs-vercel', element: <></> },
   { /* 65 */ path: 'sport-hall', element: <></> },
   { /* 66 */ path: 'night-train', element: <></> },
-  { /* 67 */ path: 'bouncy-watch', element: <></> },
+  { /* 67 */ path: 'bouncy-watch', element: <BouncyWatch /> },
   { /* 68 */ path: 'transparent-aesop-bottles', element: <></> },
   { /* 69 */ path: 'raycast-cycling', element: <></> },
   { /* 70 */ path: 'landing-page', element: <></> },
