@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import 'normalize.css/normalize.css';
 import App from './App';
-import { Monitors, FlyingBananas, ThreejsJourneyLv1, GltfAnimationsTiedToScroll, ScrollControlsGltf } from './pages';
+import { Monitors, FlyingBananas, ThreejsJourneyLv1, GltfAnimationsTiedToScroll, ScrollControlsGltf, CameraScroll } from './pages';
 
 const examples = [
   { /* 01 */ path: 'monitors', element: <Monitors /> },
@@ -83,7 +83,7 @@ const examples = [
   { /* 74 */ path: 'hi-key-bubbles', element: <></> },
   { /* 75 */ path: 'floating-instanced-shoes', element: <></> },
   { /* 76 */ path: 'simple-audio-analyser', element: <></> },
-  { /* 77 */ path: 'camera-scroll', element: <></> },
+  { /* 77 */ path: 'camera-scroll', element: <CameraScroll /> },
   { /* 78 */ path: 'springy-boxes', element: <></> },
   { /* 79 */ path: 'floating-diamonds', element: <></> },
   { /* 80 */ path: 'gltf-animations', element: <></> },
