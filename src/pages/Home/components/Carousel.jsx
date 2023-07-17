@@ -49,7 +49,8 @@ export const Carousel = () => {
   };
 
   const handleClick = (index) => {
-    setProgress((data[tab]?.length / 100) * index);
+    const calc = (index * 100) / data[tab]?.length;
+    setProgress(calc);
   };
 
   const handleKeyDown = ({ code }) => {
@@ -69,7 +70,10 @@ export const Carousel = () => {
     return () => { document.removeEventListener('keydown', handleKeyDown); };
   }, []);
 
-  useEffect(() => { setProgress((prev) => Math.max(0, Math.min(prev, 100))); }, [progress]);
+  useEffect(() => {
+    const calc = Math.max(0, Math.min(progress, 100));
+    progress !== calc && setProgress(calc);
+  }, [progress]);
 
   useEffect(() => { setActive(Math.floor((progress / 100) * (refs.current.length - 1))); }, [progress]);
 
