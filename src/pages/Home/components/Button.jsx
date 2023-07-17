@@ -17,7 +17,7 @@ const Container = styled(Link)`
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  border: 1px solid var(--c-font-primary);
+  border: 1.5px solid var(--c-font-primary);
   overflow: hidden;
   transition: 0.5s ease-in;
 
