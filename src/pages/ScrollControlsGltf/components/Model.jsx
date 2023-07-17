@@ -1,7 +1,7 @@
 import { MathUtils } from 'three';
-import { Suspense, useEffect, useLayoutEffect } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { ScrollControls, Sky, useScroll, useGLTF, useAnimations } from '@react-three/drei';
+import { useEffect, useLayoutEffect } from 'react';
+import { useFrame } from '@react-three/fiber';
+import { useScroll, useGLTF, useAnimations } from '@react-three/drei';
 
 const path = '/src/pages/ScrollControlsGltf/assets/LittlestTokyo-transformed.glb';
 
