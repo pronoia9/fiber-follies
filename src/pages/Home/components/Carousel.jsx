@@ -67,7 +67,7 @@ export const Carousel = () => {
     setActive(Math.floor((progress / 100) * (data[tab].length - 1)));
   }, [progress]);
   
-  useEffect(() => { refs?.current.length && refs.current.forEach((item, index) => displayItems(item, index, active)); }, [active]);
+  useEffect(() => { refs?.current.length && refs.current.forEach((item, index) => displayItems(item, index, active)); }, [active, tab]);
   
   // useEffect(() => { console.log('len:', data[tab].length, ' |  active:', active, ' |  progress:', progress); }, [active, progress, tab, refs]);
 
