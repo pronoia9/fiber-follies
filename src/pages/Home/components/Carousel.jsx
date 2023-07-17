@@ -70,10 +70,7 @@ export const Carousel = () => {
     return () => { document.removeEventListener('keydown', handleKeyDown); };
   }, []);
 
-  useEffect(() => {
-    const calc = Math.max(0, Math.min(progress, 100));
-    progress !== calc && setProgress(calc);
-  }, [progress]);
+  useEffect(() => { setProgress(Math.max(0, Math.min(progress, 100))); }, [progress]);
 
   useEffect(() => { setActive(Math.floor((progress / 100) * (refs.current.length - 1))); }, [progress]);
 
