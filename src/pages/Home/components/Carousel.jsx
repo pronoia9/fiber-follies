@@ -10,7 +10,7 @@ export const Carousel = () => {
     tab: state.tab,
   }));
   const refs = useRef([]);
-  const [progress, setProgress] = useState(0),
+  const [progress, setProgress] = useState(73),
     [active, setActive] = useState(0),
     [startX, setStartX] = useState(0),
     [isDown, setIsDown] = useState(false);
