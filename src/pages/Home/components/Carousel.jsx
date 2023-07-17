@@ -11,7 +11,7 @@ export const Carousel = () => {
   }));
   const refs = useRef([]);
   // TODO: Use store for active and progress
-  const [progress, setProgress] = useState(73),
+  const [progress, setProgress] = useState(79),
     [active, setActive] = useState(0),
     [startX, setStartX] = useState(0),
     [isDown, setIsDown] = useState(false);
