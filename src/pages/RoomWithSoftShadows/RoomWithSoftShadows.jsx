@@ -1,9 +1,9 @@
+import { useEffect } from 'react';
 import { Leva } from 'leva';
 import { styled } from 'styled-components';
 
 import { Scene } from '.';
 import { dataStore } from '../../store/dataStore.js';
-import { useEffect } from 'react';
 
 export const RoomWithSoftShadows = () => {
   const setLogoPosition = dataStore((state) => state.setLogoPosition);
