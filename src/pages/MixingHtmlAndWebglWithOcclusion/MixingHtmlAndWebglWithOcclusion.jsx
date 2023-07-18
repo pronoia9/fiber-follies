@@ -1,10 +1,19 @@
+import { useEffect } from 'react';
+import { Leva } from 'leva';
 import { styled } from 'styled-components';
 
 import { Scene } from '.';
+import { dataStore } from '../../store/dataStore.js';
 
 export const MixingHtmlAndWebglWithOcclusion = () => {
+  const setLogoPosition = dataStore((state) => state.setLogoPosition);
+  useEffect(() => {
+    setLogoPosition('top left');
+  }, []);
+
   return (
     <Container>
+      <Leva collapsed />
       <Scene />
     </Container>
   );
