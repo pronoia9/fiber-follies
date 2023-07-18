@@ -1,10 +1,17 @@
 import { styled } from 'styled-components';
 
 import { Buttons, Button } from '..';
+import { useNavigate } from 'react-router-dom';
 
 export const CarouselCard = ({ index, refs, title, image, path, link, ...props }) => {
+  const navigate = useNavigate();
+
+  const handleDoubleClick = () => {
+    navigate(path);
+  };
+
   return (
-    <Container ref={(ref) => (refs.current[index] = ref)} className='carousel-item' {...props}>
+    <Container ref={(ref) => (refs.current[index] = ref)} className='carousel-item' onDoubleClick={handleDoubleClick} {...props}>
       <div className='carousel-box'>
         <div className='title'>{title}</div>
         <Links>
