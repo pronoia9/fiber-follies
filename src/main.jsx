@@ -9,6 +9,7 @@ import {
   /* 02 */ FlyingBananas,
   /* 03 */ RoomWithSoftShadows,
   /* 26 */ ThreejsJourneyLv1,
+  /* 28 */ MixingHtmlAndWebglWithOcclusion,
   /* 36 */ GltfAnimationsTiedToScroll,
   /* 67 */ BouncyWatch,
   /* 71 */ ScrollControlsGltf,
@@ -43,7 +44,7 @@ const examples = [
   { /* 25 */ path: 'ground-reflections-and-video-textures', element: <></> },
   { /* 26 */ path: 'threejs-journey-lv1', element: <ThreejsJourneyLv1 /> },
   { /* 27 */ path: 'threejs-journey-portal', element: <></> },
-  { /* 28 */ path: 'mixing-html-and-webgl-w-occlusion', element: <></> },
+  { /* 28 */ path: 'mixing-html-and-webgl-w-occlusion', element: <MixingHtmlAndWebglWithOcclusion /> },
   { /* 29 */ path: 'interactive-spline-scene-live-html', element: <></> },
   { /* 30 */ path: 'diamond-refraction', element: <></> },
   { /* 31 */ path: 'diamond-ring', element: <></> },
@@ -116,9 +117,7 @@ const examples = [
   { /* 98 */ path: 'volumetric-spotlight', element: <></> },
 ];
 
-const router = createBrowserRouter([
-  { path: '/', element: <App />, children: examples, },
-]);
+const router = createBrowserRouter([{ path: '/', element: <App />, children: examples }]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
