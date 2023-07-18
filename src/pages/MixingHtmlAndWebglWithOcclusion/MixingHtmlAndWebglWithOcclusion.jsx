@@ -1,3 +1,13 @@
+import { styled } from 'styled-components';
+
+import { Scene } from '.';
+
 export const MixingHtmlAndWebglWithOcclusion = () => {
-  return <div>MixingHtmlAndWebglWithOcclusion</div>;
+  return (
+    <Container>
+      <Scene />
+    </Container>
+  );
 };
+
+const Container = styled.div``;
