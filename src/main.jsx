@@ -7,6 +7,7 @@ import App from './App';
 import {
   /* 01 */ Monitors,
   /* 02 */ FlyingBananas,
+  /* 03 */ RoomWithSoftShadows,
   /* 26 */ ThreejsJourneyLv1,
   /* 36 */ GltfAnimationsTiedToScroll,
   /* 67 */ BouncyWatch,
@@ -17,7 +18,7 @@ import {
 const examples = [
   { /* 01 */ path: 'monitors', element: <Monitors /> },
   { /* 02 */ path: 'flying-bananas', element: <FlyingBananas /> },
-  { /* 03 */ path: 'room-with-soft-shadows', element: <></> },
+  { /* 03 */ path: 'room-with-soft-shadows', element: <RoomWithSoftShadows /> },
   { /* 04 */ path: 'tshirt-configurator', element: <></> },
   { /* 05 */ path: 'caustics', element: <></> },
   { /* 06 */ path: 'volumetric-light-godray', element: <></> },

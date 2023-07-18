@@ -1,6 +1,7 @@
 import { Home } from './Home';
 /* 01 */ import { Monitors } from './Monitors';
 /* 02 */ import { FlyingBananas } from './FlyingBananas';
+/* 03 */ import { RoomWithSoftShadows } from './RoomWithSoftShadows';
 /* 26 */ import { ThreejsJourneyLv1 } from './ThreejsJourneyLv1';
 /* 36 */ import { GltfAnimationsTiedToScroll } from './GltfAnimationsTiedToScroll';
 /* 67 */ import { BouncyWatch } from './BouncyWatch';
@@ -11,6 +12,7 @@ export {
   Home,
   /* 01 */ Monitors,
   /* 02 */ FlyingBananas,
+  /* 02 */ RoomWithSoftShadows,
   /* 26 */ ThreejsJourneyLv1,
   /* 36 */ GltfAnimationsTiedToScroll,
   /* 67 */ BouncyWatch,
