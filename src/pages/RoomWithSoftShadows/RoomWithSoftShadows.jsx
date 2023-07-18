@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 
 export const RoomWithSoftShadows = () => {
   const setLogoPosition = dataStore((state) => state.setLogoPosition);
-  useEffect(() => { setLogoPosition('top left'); }, []);
+  useEffect(() => { setLogoPosition('bottom left'); }, []);
 
   return (
     <Container>
