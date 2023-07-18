@@ -11,11 +11,7 @@ export const Scene = () => {
       <Lights />
       <Effects />
       <OrbitControls
-        enablePan={false}
-        enableZoom={false}
-        minPolarAngle={Math.PI / 2.2}
-        maxPolarAngle={Math.PI / 2.2}
-        // {...useControls('Orbit Controls', { enablePan: false, enableZoom: false, minPolarAngle: Math.PI / 2.2, maxPolarAngle: Math.PI / 2.2 })}
+        {...useControls('Orbit Controls', { enablePan: false, enableZoom: false, minPolarAngle: Math.PI / 2.2, maxPolarAngle: Math.PI / 2.2 })}
       />
 
       <Suspense fallback={null}>
