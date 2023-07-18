@@ -2,8 +2,13 @@ import { Leva } from 'leva';
 import { styled } from 'styled-components';
 
 import { Scene } from '.';
+import { dataStore } from '../../store/dataStore.js';
+import { useEffect } from 'react';
 
 export const RoomWithSoftShadows = () => {
+  const setLogoPosition = dataStore((state) => state.setLogoPosition);
+  useEffect(() => { setLogoPosition('top left'); }, []);
+
   return (
     <Container>
       <Leva collapsed />
@@ -31,5 +36,5 @@ const Container = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
   color: black;
   -webkit-font-smoothing: antialiased;
-  background: #f0f0f0;
+  /* background: #f0f0f0; */
 `;
