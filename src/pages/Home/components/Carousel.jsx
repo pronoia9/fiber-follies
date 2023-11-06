@@ -5,10 +5,7 @@ import { CarouselCard } from '..';
 import { dataStore } from '../../../store/dataStore';
 
 export const Carousel = () => {
-  const { data, tab } = dataStore((state) => ({
-    data: state.data,
-    tab: state.tab,
-  }));
+  const { data, tab } = dataStore((state) => ({ data: state.data, tab: state.tab, }));
   const refs = useRef([]);
   // TODO: Use store for active and progress
   const [progress, setProgress] = useState(79),
