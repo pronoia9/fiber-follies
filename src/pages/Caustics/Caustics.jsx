@@ -1,3 +1,10 @@
+import { Scene, Overlay } from '.';
+
 export const Caustics = () => {
-  return <div>Caustics</div>;
+  return (
+    <>
+      <Scene />
+      <Overlay />
+    </>
+  );
 };
