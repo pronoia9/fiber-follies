@@ -2,6 +2,7 @@ import { Home } from './Home';
 /* 01 */ import { Monitors } from './Monitors';
 /* 02 */ import { FlyingBananas } from './FlyingBananas';
 /* 03 */ import { RoomWithSoftShadows } from './RoomWithSoftShadows';
+/* 05 */ import { Caustics } from './Caustics';
 /* 26 */ import { ThreejsJourneyLv1 } from './ThreejsJourneyLv1';
 /* 28 */ import { MixingHtmlAndWebglWithOcclusion } from './MixingHtmlAndWebglWithOcclusion';
 /* 36 */ import { GltfAnimationsTiedToScroll } from './GltfAnimationsTiedToScroll';
@@ -13,7 +14,8 @@ export {
   Home,
   /* 01 */ Monitors,
   /* 02 */ FlyingBananas,
-  /* 02 */ RoomWithSoftShadows,
+  /* 03 */ RoomWithSoftShadows,
+  /* 05 */ Caustics,
   /* 26 */ ThreejsJourneyLv1,
   /* 28 */ MixingHtmlAndWebglWithOcclusion,
   /* 36 */ GltfAnimationsTiedToScroll,
