@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { AccumulativeShadows, PerformanceMonitor, RandomizedLight } from '@react-three/drei';
 
-import { Scene, Overlay, Environment } from '.';
+import { Scene, Overlay, Effects } from '.';
 import { dataStore } from '../../store/dataStore';
 
 export const Caustics = () => {
@@ -30,7 +30,7 @@ export const Caustics = () => {
           </AccumulativeShadows>
         </group>
 
-        <Environment perfSucks={perfSucks} />
+        <Effects perfSucks={perfSucks} />
       </Canvas>
 
       <Overlay />
