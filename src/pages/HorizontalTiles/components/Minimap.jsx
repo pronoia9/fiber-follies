@@ -4,8 +4,9 @@ import { useScroll } from "@react-three/drei";
 import { useSnapshot } from "valtio";
 
 import { damp, geometry, material } from '../utils';
+import { state } from "../utils";
 
-export const Minimap = ({ state }) => {
+export const Minimap = () => {
   const ref = useRef();
   const scroll = useScroll();
   const { urls } = useSnapshot(state);
