@@ -13,7 +13,7 @@ export const HorizontalTiles = () => {
   return (
     <Container>
       <Canvas gl={{ antialias: false }} dpr={[1, 1.5]} onPointerMissed={() => (state.clicked = null)}>
-        <Items />
+        <Items state={state} />
       </Canvas>
       <Overlay />
     </Container>
