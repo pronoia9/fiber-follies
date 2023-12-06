@@ -3,17 +3,13 @@ import { proxy } from 'valtio';
 import styled from 'styled-components';
 
 import { Items, Overlay } from '.';
-
-const state = proxy({
-  clicked: null,
-  urls: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 5, 7, 8, 2, 4, 9, 6].map((u) => `/src/pages/HorizontalTiles/assets/${u}.jpg`),
-});
+import { state } from './utils';
 
 export const HorizontalTiles = () => {
   return (
     <Container>
       <Canvas gl={{ antialias: false }} dpr={[1, 1.5]} onPointerMissed={() => (state.clicked = null)}>
-        <Items state={state} />
+        <Items />
       </Canvas>
       <Overlay />
     </Container>
