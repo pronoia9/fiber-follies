@@ -1,5 +1,5 @@
 import { useThree } from '@react-three/fiber';
-import { ScrollControls } from '@react-three/drei';
+import { Scroll, ScrollControls } from '@react-three/drei';
 import { useSnapshot } from 'valtio';
 
 import { Item, Minimap } from '..';
