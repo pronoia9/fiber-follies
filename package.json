@@ -28,6 +28,7 @@
     "react-router-dom": "^6.13.0",
     "styled-components": "^6.0.0-rc.5",
     "three": "^0.153.0",
+    "valtio": "^1.12.1",
     "zustand": "^4.3.9"
   },
   "devDependencies": {
