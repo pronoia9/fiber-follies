@@ -11,7 +11,7 @@ export const Items = ({ w = 0.7, gap = 0.15, state }) => {
 
   return (
     <ScrollControls horizontal damping={0.1} pages={(width - xW + urls.length * xW) / width}>
-      <Minimap />
+      <Minimap state={state} />
       <Scroll>
         {urls.map((url, index) => (
           <Item key={`ht-url-#${index}`} index={index} position={[index * xW, 0, 0]} scale={[w, 4, 1]} url={url} />
