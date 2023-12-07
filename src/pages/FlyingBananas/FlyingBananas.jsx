@@ -42,8 +42,8 @@ const Container = styled.div`
 
   input[type='range'] {
     display: block;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    /* -webkit-appearance: none; */
+    /* -moz-appearance: none; */
     background: black;
     border-radius: 5px;
     width: 100%;
