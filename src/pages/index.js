@@ -2,7 +2,7 @@ import { Home } from './Home';
 /* 01 */ import { Monitors } from './1-Monitors';
 /* 02 */ import { FlyingBananas } from './2-FlyingBananas';
 /* 03 */ import { RoomWithSoftShadows } from './3-RoomWithSoftShadows';
-/* 05 */ import { Caustics } from './Caustics';
+/* 05 */ import { Caustics } from './5-Caustics';
 /* 12 */ import { HorizontalTiles } from './HorizontalTiles';
 /* 26 */ import { ThreejsJourneyLv1 } from './ThreejsJourneyLv1';
 /* 28 */ import { MixingHtmlAndWebglWithOcclusion } from './MixingHtmlAndWebglWithOcclusion';

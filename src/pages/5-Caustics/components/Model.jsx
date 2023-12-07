@@ -1,7 +1,7 @@
 import { AdditiveBlending, FrontSide, MeshStandardMaterial } from 'three';
 import { Caustics, Center, MeshTransmissionMaterial, useGLTF } from '@react-three/drei';
 
-const path = '/src/pages/Caustics/assets/glass-transformed.glb';
+const path = '/src/pages/5-Caustics/assets/glass-transformed.glb';
 const innerMaterial = new MeshStandardMaterial({
   transparent: true,
   opacity: 1,
