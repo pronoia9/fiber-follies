@@ -13,7 +13,7 @@ export const Banana = ({ index, z, speed }) => {
   // useGLTF is an abstraction around R3F's useLoader(GLTFLoader, url)
   // It can automatically handle draco and meshopt-compressed assets without you having to
   // worry about binaries and such ...
-  const { nodes, materials } = useGLTF('/src/pages/2-FlyingBananas/assets/banana-v1-transformed.glb');
+  const { nodes, materials } = useGLTF('/src/pages/FlyingBananas/assets/banana-v1-transformed.glb');
   // By the time we're here the model is loaded, this is possible through React suspense
   
   // Local component state, it is safe to mutate because it's fixed data

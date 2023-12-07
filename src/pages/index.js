@@ -1,11 +1,11 @@
 import { Home } from './Home';
-/* 01 */ import { Monitors } from './1-Monitors';
-/* 02 */ import { FlyingBananas } from './2-FlyingBananas';
-/* 03 */ import { RoomWithSoftShadows } from './3-RoomWithSoftShadows';
-/* 05 */ import { Caustics } from './5-Caustics';
-/* 12 */ import { HorizontalTiles } from './12-HorizontalTiles';
-/* 26 */ import { ThreejsJourneyLv1 } from './26-ThreejsJourneyLv1';
-/* 28 */ import { MixingHtmlAndWebglWithOcclusion } from './28-MixingHtmlAndWebglWithOcclusion';
+/* 01 */ import { Monitors } from './Monitors';
+/* 02 */ import { FlyingBananas } from './FlyingBananas';
+/* 03 */ import { RoomWithSoftShadows } from './RoomWithSoftShadows';
+/* 05 */ import { Caustics } from './Caustics';
+/* 12 */ import { HorizontalTiles } from './HorizontalTiles';
+/* 26 */ import { ThreejsJourneyLv1 } from './ThreejsJourneyLv1';
+/* 28 */ import { MixingHtmlAndWebglWithOcclusion } from './MixingHtmlAndWebglWithOcclusion';
 /* 36 */ import { GltfAnimationsTiedToScroll } from './GltfAnimationsTiedToScroll';
 /* 67 */ import { BouncyWatch } from './BouncyWatch';
 /* 71 */ import { ScrollControlsGltf } from './ScrollControlsGltf';

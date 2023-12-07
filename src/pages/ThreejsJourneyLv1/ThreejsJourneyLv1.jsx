@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 
 export const ThreejsJourneyLv1 = () => {
   const { theme, setLogoPosition } = dataStore((state) => ({ theme: state.theme, setLogoPosition: state.setLogoPosition }));
-  const model = useGLTF('/src/pages/26-ThreejsJourneyLv1/assets/model.glb');
+  const model = useGLTF('/src/pages/ThreejsJourneyLv1/assets/model.glb');
   const canvasOptions = useControls('Canvas', { ...levaProps.canvas, /* color: { value: themes[theme].accentPrimary } */ });
   const cameraOptions = useControls('Camera', levaProps.camera);
   const presentationControlsOptions = useControls('Presentation Controls', levaProps.presentationControls);
@@ -38,7 +38,7 @@ export const ThreejsJourneyLv1 = () => {
   );
 };
 
-useGLTF.preload('/src/pages/26-ThreejsJourneyLv1/assets/model.glb');
+useGLTF.preload('/src/pages/ThreejsJourneyLv1/assets/model.glb');
 
 const Container = styled.div`
   filter: saturate(1.15) hue-rotate(345deg);

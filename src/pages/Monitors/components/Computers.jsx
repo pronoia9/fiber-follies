@@ -10,7 +10,7 @@ import { Leds, ScreenInteractive, ScreenText } from '..';
 const context = createContext();
 
 export const Instances = ({ children, ...props }) => {
-  const { nodes } = useGLTF('/src/pages/1-Monitors/assets/computers_1-transformed.glb');
+  const { nodes } = useGLTF('/src/pages/Monitors/assets/computers_1-transformed.glb');
   const instances = useMemo(
     () => ({
       Object: nodes.Object_4,
@@ -39,7 +39,7 @@ export const Instances = ({ children, ...props }) => {
 };
 
 export const Computers = (props) => {
-  const { nodes: n, materials: m } = useGLTF('/src/pages/1-Monitors/assets/computers_1-transformed.glb');
+  const { nodes: n, materials: m } = useGLTF('/src/pages/Monitors/assets/computers_1-transformed.glb');
   const instances = useContext(context);
 
   return (

@@ -4,7 +4,7 @@ import { useFrame } from '@react-three/fiber';
 import { Html, useGLTF } from '@react-three/drei';
 
 import { HeroPage } from '..';
-const path = '/src/pages/28-MixingHtmlAndWebglWithOcclusion/assets/mac-draco.glb';
+const path = '/src/pages/MixingHtmlAndWebglWithOcclusion/assets/mac-draco.glb';
 
 export const Model = (props) => {
   const group = useRef();

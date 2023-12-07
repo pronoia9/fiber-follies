@@ -1,6 +1,6 @@
 import { useGLTF } from '@react-three/drei';
 
-const path = '/src/pages/3-RoomWithSoftShadows/assets/room-transformed.glb';
+const path = '/src/pages/RoomWithSoftShadows/assets/room-transformed.glb';
 
 export const Model = (props) => {
   const { nodes, materials } = useGLTF(path);

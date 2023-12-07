@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Leva } from 'leva';
 import { styled } from 'styled-components';
 
-import { Scene } from '.';
+import { Scene } from './index.js';
 import { dataStore } from '../../store/dataStore.js';
 
 export const RoomWithSoftShadows = () => {
