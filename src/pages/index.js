@@ -3,6 +3,7 @@ import { Home } from './Home';
 /* 02 */ import { FlyingBananas } from './FlyingBananas';
 /* 03 */ import { RoomWithSoftShadows } from './RoomWithSoftShadows';
 /* 05 */ import { Caustics } from './Caustics';
+/* 11 */ import { ImageGallery } from './ImageGallery';
 /* 12 */ import { HorizontalTiles } from './HorizontalTiles';
 /* 26 */ import { ThreejsJourneyLv1 } from './ThreejsJourneyLv1';
 /* 28 */ import { MixingHtmlAndWebglWithOcclusion } from './MixingHtmlAndWebglWithOcclusion';
@@ -23,5 +24,6 @@ export {
   /* 67 */ BouncyWatch,
   /* 71 */ ScrollControlsGltf,
   /* 77 */ CameraScroll,
+  /* 11 */ ImageGallery,
   /* 12 */ HorizontalTiles,
 };
