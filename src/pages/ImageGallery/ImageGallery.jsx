@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Environment, MeshReflectorMaterial } from '@react-three/drei';
 
 import { Frames } from '.';
 
 export const ImageGallery = () => {
+  const [currentImage, setCurrentImage] = useState(null);
+
   return (
     <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }}>
       {/* Looks/Effects */}
@@ -12,7 +15,7 @@ export const ImageGallery = () => {
       <Environment preset='city' />
 
       <group position={[0, -0.5, 0]}>
-        <Frames />
+        <Frames currentImage={currentImage} setCurrentImage={setCurrentImage} />
         {/* Floor */}
         <mesh rotation={[-Math.PI / 2, 0, 0]}>
           <planeGeometry args={[50, 50]} />
