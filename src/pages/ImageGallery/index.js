@@ -20,4 +20,6 @@ const images = [
   { position: [2, 0, 2.75], rotation: [0, -Math.PI / 2.5, 0], url: pexel(1738986) },
 ];
 
-export { ImageGallery, Frames, Frame, pexel, images };
+const GOLDENRATIO = 1.61803398875;
+
+export { ImageGallery, Frames, Frame, pexel, images, GOLDENRATIO };
