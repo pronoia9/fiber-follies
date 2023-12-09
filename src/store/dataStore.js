@@ -12,12 +12,13 @@ export const dataStore = create((set) => ({
 
   tab: 'showcase',
   setTab: (tab) => { set({ tab }); },
-  active: 0,
-  setActive: (active) => { set({ active }); },
+  // active: 0,
+  // setActive: (active) => { set({ active }); },
   // progress: 0,
+  // setProgress: (progress) => { set({ progress }); },
+  
   // progress: { showcase: 0, 'game prototypes': 0, 'basic examples': 0 },
   // active: { showcase: 0, 'game prototypes': 0, 'basic examples': 0 },
-  // setProgress: (progress) => { set({ progress }); },
   // setProgress: (progress) => {
   //   set((state) => {
   //     let prev = state.progresses;
