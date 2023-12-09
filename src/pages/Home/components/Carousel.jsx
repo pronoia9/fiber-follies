@@ -3,16 +3,19 @@ import { styled } from 'styled-components';
 
 import { CarouselCard } from '..';
 import { dataStore } from '../../../store/dataStore';
+import { data } from '../../../store/constants';
 
 export const Carousel = () => {
-  const { data, tab } = dataStore((state) => ({ data: state.data, tab: state.tab, }));
+  const { tab } = dataStore((state) => ({ tab: state.tab }));
   const refs = useRef([]);
   // TODO: Use store for active and progress
   const [progress, setProgress] = useState(79),
     [active, setActive] = useState(0),
     [startX, setStartX] = useState(0),
     [isDown, setIsDown] = useState(false);
-  const speedWheel = 0.01, speedDrag = -0.1, gap = 10;
+  const speedWheel = 0.01,
+    speedDrag = -0.1,
+    gap = 10;
 
   const getZindex = (index) => refs.current.map((_, i) => (index === i ? refs.current.length : refs.current.length - Math.abs(index - i)));
 
@@ -50,35 +53,41 @@ export const Carousel = () => {
   };
 
   const handleKeyDown = ({ code }) => {
-    const direction = (code === 'ArrowRight' || code === 'ArrowDown') ? 1 : (code === 'ArrowLeft' || code === 'ArrowUp') ? -1 : 0;
+    const direction = code === 'ArrowRight' || code === 'ArrowDown' ? 1 : code === 'ArrowLeft' || code === 'ArrowUp' ? -1 : 0;
     setProgress((prev) => prev + direction);
-  }
+  };
 
   useEffect(() => {
     setActive(0);
     setProgress(0);
     // refs.current = refs.current.filter((d) => d !== null);
   }, [tab]);
-  
+
   useEffect(() => {
     setProgress(Math.max(0, Math.min(progress, 100)));
     setActive(Math.floor((progress / 100) * (data[tab].length - 1)));
   }, [progress]);
-  
-  useEffect(() => { refs?.current.length && !isNaN(active) && refs.current.forEach((item, index) => displayItems(item, index, active)); }, [active, tab]);
-  
+
+  useEffect(() => {
+    refs?.current.length && !isNaN(active) && refs.current.forEach((item, index) => displayItems(item, index, active));
+  }, [active, tab]);
+
   // useEffect(() => { console.log('len:', data[tab].length, ' |  active:', active, ' |  progress:', progress); }, [active, progress, tab, refs]);
 
   // Event listener for mouse wheel
   useEffect(() => {
     document.addEventListener('mousewheel', handleWheel);
-    return () => { document.removeEventListener('mousewheel', handleWheel); };
+    return () => {
+      document.removeEventListener('mousewheel', handleWheel);
+    };
   }, []);
 
   // Event listener for arrow key press
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
-    return () => { document.removeEventListener('keydown', handleKeyDown); };
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
   }, []);
 
   return (
@@ -89,7 +98,9 @@ export const Carousel = () => {
           index={index}
           refs={refs}
           {...item}
-          onClick={() => { handleClick(index); }}
+          onClick={() => {
+            handleClick(index);
+          }}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
