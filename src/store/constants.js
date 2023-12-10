@@ -1048,3 +1048,5 @@ export const data = {
     },
   ],
 };
+
+export const tabs = Object.keys(data);
