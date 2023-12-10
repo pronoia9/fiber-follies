@@ -6,10 +6,13 @@ import { dataStore } from '../../../store/dataStore';
 import { data } from '../../../store/constants';
 
 export const Carousel = () => {
-  const { tab } = dataStore((state) => ({ tab: state.tab }));
+  const { tab, selected, setSelected } = dataStore((state) => ({
+    tab: state.tab,
+    selected: state.selected,
+    setSelected: state.setSelected
+  }));
   const refs = useRef([]);
-  // TODO: Use store for active and progress
-  const [progress, setProgress] = useState(79),
+  const [progress, setProgress] = useState(selected),
     [active, setActive] = useState(0),
     [startX, setStartX] = useState(0),
     [isDown, setIsDown] = useState(false);
@@ -49,6 +52,7 @@ export const Carousel = () => {
 
   const handleClick = (index) => {
     const calc = (index * 100) / data[tab]?.length;
+    setSelected(calc + 1);
     setProgress(calc + 1);
   };
 
@@ -58,6 +62,7 @@ export const Carousel = () => {
   };
 
   useEffect(() => {
+    setSelected(0);
     setActive(0);
     setProgress(0);
     // refs.current = refs.current.filter((d) => d !== null);
@@ -77,17 +82,20 @@ export const Carousel = () => {
   // Event listener for mouse wheel
   useEffect(() => {
     document.addEventListener('mousewheel', handleWheel);
-    return () => {
-      document.removeEventListener('mousewheel', handleWheel);
-    };
+    return () => { document.removeEventListener('mousewheel', handleWheel); };
   }, []);
 
   // Event listener for arrow key press
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
+    return () => { document.removeEventListener('keydown', handleKeyDown); };
+  }, []);
+
+  // TODO: Enter key to initiate click functionality
+  useEffect(() => {
+    const enter = (e) => { console.log("is 'Enter key pressed?'", e.key === 'Enter' || e.keyCode === 13); };
+    document.addEventListener('keypress', enter);
+    return () => { document.removeEventListener('', enter); };
   }, []);
 
   return (
@@ -98,9 +106,7 @@ export const Carousel = () => {
           index={index}
           refs={refs}
           {...item}
-          onClick={() => {
-            handleClick(index);
-          }}
+          onClick={() => { handleClick(index); }}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
