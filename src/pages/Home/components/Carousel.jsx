@@ -98,6 +98,13 @@ export const Carousel = () => {
     return () => { document.removeEventListener('', enter); };
   }, []);
 
+  // TODO: Number key to go to a specific slide
+  useEffect(() => {
+    const enter = (e) => { console.log('is a number pressed?', !isNaN(parseInt(e.key))); };
+    document.addEventListener('keypress', enter);
+    return () => { document.removeEventListener('', enter); };
+  }, []);
+
   return (
     <Container className='carousel'>
       {data[tab]?.map((item, index) => (
