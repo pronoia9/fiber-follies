@@ -9,7 +9,12 @@ export const Carousel = () => {
   const { tab, selected, setSelected } = dataStore((state) => ({
     tab: state.tab,
     selected: state.selected,
-    setSelected: state.setSelected
+    setSelected: state.setSelected,
+    // TODO: test swapping these states for store again
+    // active: state.active,
+    // setActive: state.setActive,
+    // progress: state.progress,
+    // setProgress: state.setProgress,
   }));
   const refs = useRef([]);
   const [progress, setProgress] = useState(selected),
