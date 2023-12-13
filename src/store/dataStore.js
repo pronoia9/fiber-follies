@@ -14,4 +14,9 @@ export const dataStore = create((set) => ({
   setTab: (tab) => { set({ tab }); },
   selected: 0,
   setSelected: (selected) => { set({ selected }); },
+  // TODO: test carousel states for store
+  // active: 0,
+  // setActive: (active) => { set({ active }); },
+  // progress: 0,
+  // setProgress: (progress) => { set({ progress }); },
 }));
