@@ -5,6 +5,7 @@ import { Home } from './Home';
 /* 05 */ import { Caustics } from './Caustics';
 /* 11 */ import { ImageGallery } from './ImageGallery';
 /* 12 */ import { HorizontalTiles } from './HorizontalTiles';
+/* 25 */ import {GroundReflectionsAndVideoTextures} from './GroundReflectionsAndVideoTextures';
 /* 26 */ import { ThreejsJourneyLv1 } from './ThreejsJourneyLv1';
 /* 28 */ import { MixingHtmlAndWebglWithOcclusion } from './MixingHtmlAndWebglWithOcclusion';
 /* 36 */ import { GltfAnimationsTiedToScroll } from './GltfAnimationsTiedToScroll';
@@ -18,6 +19,7 @@ export {
   /* 02 */ FlyingBananas,
   /* 03 */ RoomWithSoftShadows,
   /* 05 */ Caustics,
+  /* 25 */ GroundReflectionsAndVideoTextures,
   /* 26 */ ThreejsJourneyLv1,
   /* 28 */ MixingHtmlAndWebglWithOcclusion,
   /* 36 */ GltfAnimationsTiedToScroll,
