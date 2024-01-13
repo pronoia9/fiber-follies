@@ -2,8 +2,8 @@ import { Reflector, useTexture } from '@react-three/drei';
 
 export const Ground = () => {
   const [floor, normal] = useTexture([
-    '/pages/GroundReflectionsAndVideoTextures/assets/SurfaceImperfections003_1K_var1.jpg',
-    '/pages/GroundReflectionsAndVideoTextures/assets/SurfaceImperfections003_1K_Normal.jpg',
+    '/src/pages/GroundReflectionsAndVideoTextures/assets/SurfaceImperfections003_1K_var1.jpg',
+    '/src/pages/GroundReflectionsAndVideoTextures/assets/SurfaceImperfections003_1K_Normal.jpg',
   ]);
 
   return (
