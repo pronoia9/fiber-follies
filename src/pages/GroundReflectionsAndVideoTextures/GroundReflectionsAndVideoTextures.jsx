@@ -9,6 +9,7 @@ export const GroundReflectionsAndVideoTextures = () => {
   return (
     <Container>
       <Canvas concurrent gl={{ alpha: false }} pixelRatio={[1, 1.5]} camera={{ position: [0, 3, 100], fov: 15 }}>
+        {/* Background Effects */}
         <color attach='background' args={['black']} />
         <fog attach='fog' args={['black', 15, 20]} />
 
@@ -24,6 +25,7 @@ export const GroundReflectionsAndVideoTextures = () => {
           <spotLight position={[0, 10, 0]} intensity={0.3} />
           <directionalLight position={[-50, 0, -40]} intensity={0.7} />
 
+          {/* Mouse/Camera */}
           <Intro />
         </Suspense>
       </Canvas>
