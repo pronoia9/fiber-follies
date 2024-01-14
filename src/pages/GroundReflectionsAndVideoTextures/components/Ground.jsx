@@ -16,7 +16,7 @@ export const Ground = () => {
       mixStrength={1.5}
       rotation={[-Math.PI / 2, 0, Math.PI / 2]}
     >
-      {(Material, props) => <Material color='#a0a0a0' metalness={0.4} roughness={floor} normalMap={normal} normalScale={[2, 2]} {...props} />}
+      {(Material, props) => <Material color='#a0a0a0' metalness={0.4} roughnessMap={floor} normalMap={normal} normalScale={[2, 2]} {...props} />}
     </Reflector>
   );
 };
