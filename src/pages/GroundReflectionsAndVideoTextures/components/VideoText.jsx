@@ -15,10 +15,10 @@ export const VideoText = (props) => {
   useEffect(() => void video.play(), [video]);
 
   return (
-    <Text font='/fonts/Inter-Bold.woff' fontSize={3} letterSpacing={-0.06} {...props}>
+    <Text font='/src/fonts/Inter-Bold.woff' fontSize={3} letterSpacing={-0.06} {...props}>
       drei
       <meshBasicMaterial toneMapped={false}>
-        <videoTexture attach='map' args={[video]} encoding={sRGBEncoding} />
+        <videoTexture attach='map' args={[video]} encoding={THREE.sRGBEncoding} />
       </meshBasicMaterial>
     </Text>
   );
