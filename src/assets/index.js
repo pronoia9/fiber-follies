@@ -3,6 +3,11 @@ import roboto from './fonts/Roboto_Flex/RobotoFlex-VariableFont.ttf';
 
 // IMAGES
 // Showcase
+import shopping from './images/shopping.webp';
+import cardsWithBorderRadius from './images/cards-with-border-radius.webp';
+import threejsJourneyLv1Fisheye from './images/threejs-journey-lv1-fisheye.webp';
+import lusionConnectors from './images/lusion-connectors.webp';
+import ecctrlFisheye from './images/ecctrl-fisheye.webp';
 import monitors from './images/monitors.webp';
 import flyingBananas from './images/flying-bananas.webp';
 import roomWithSoftShadows from './images/room-with-soft-shadows.webp';
@@ -158,6 +163,11 @@ export {
   orelo,
   roboto,
   // Showcase
+  shopping,
+  cardsWithBorderRadius,
+  threejsJourneyLv1Fisheye,
+  lusionConnectors,
+  ecctrlFisheye,
   monitors,
   flyingBananas,
   roomWithSoftShadows,
