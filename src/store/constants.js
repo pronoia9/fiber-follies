@@ -1,5 +1,10 @@
 import {
   // Showcase
+  shopping,
+  cardsWithBorderRadius,
+  threejsJourneyLv1Fisheye,
+  lusionConnectors,
+  ecctrlFisheye,
   monitors,
   flyingBananas,
   roomWithSoftShadows,
@@ -154,6 +159,36 @@ import {
 
 export const data = {
   showcase: [
+    {
+      title: 'Shopping',
+      path: 'shopping',
+      image: shopping,
+      link: 'https://codesandbox.io/s/6d97z4',
+    },
+    {
+      title: 'Cards with Border Radius',
+      path: 'cards-with-border-radius',
+      image: cardsWithBorderRadius,
+      link: 'https://codesandbox.io/s/9s2wd9',
+    },
+    {
+      title: 'Threejs Journey Lv1 Fisheye',
+      path: 'threejs-journey-lv1-fisheye',
+      image: threejsJourneyLv1Fisheye,
+      link: 'https://codesandbox.io/s/7qytdw',
+    },
+    {
+      title: 'Lusion Connectors',
+      path: 'lusion-connectors',
+      image: lusionConnectors,
+      link: 'https://codesandbox.io/s/xy8c8z',
+    },
+    {
+      title: 'Ecctrl + Fisheye',
+      path: 'ecctrl-fisheye',
+      image: ecctrlFisheye,
+      link: 'https://codesandbox.io/s/nvk9pf',
+    },
     {
       title: 'Monitors',
       path: 'monitors',
