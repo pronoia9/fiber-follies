@@ -21,6 +21,12 @@ import {
 } from './pages';
 
 const examples = [
+  // Showcase
+  { /* -05 */ path: 'shopping', element: <></> },
+  { /* -04 */ path: 'cards-with-border-radius', element: <></> },
+  { /* -03 */ path: 'threejs-journey-lv1-fisheye', element: <></> },
+  { /* -02 */ path: 'lusion-connectors', element: <></> },
+  { /* -01 */ path: 'ecctrl-fisheye', element: <></> },
   { /* 01 */ path: 'monitors', element: <Monitors /> },
   { /* 02 */ path: 'flying-bananas', element: <FlyingBananas /> },
   { /* 03 */ path: 'room-with-soft-shadows', element: <RoomWithSoftShadows /> },
